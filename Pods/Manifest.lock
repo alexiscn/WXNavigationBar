@@ -1,0 +1,16 @@
+PODS:
+  - WXNavigationBar (0.0.1)
+
+DEPENDENCIES:
+  - WXNavigationBar (from `.`)
+
+EXTERNAL SOURCES:
+  WXNavigationBar:
+    :path: "."
+
+SPEC CHECKSUMS:
+  WXNavigationBar: e220bcd747a58f2460ec8fd90246ed20acd93fac
+
+PODFILE CHECKSUM: 13a4d7002605388983af63b093933c53922238ba
+
+COCOAPODS: 1.8.4
