@@ -7,15 +7,20 @@
 //
 
 import UIKit
+import WXNavigationBar
 
 class MomentsViewController: UIViewController {
 
     private var tableView: UITableView!
     
+    private var barTintColor: UIColor = .white
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupTableView()
+        
+        wx_navigationBar.alpha = 0.0
     }
     
     private func setupTableView() {

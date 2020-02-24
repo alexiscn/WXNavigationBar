@@ -118,6 +118,7 @@ extension SessionViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: false)
         
         let chatRoomVC = ChatRoomViewController()
+        chatRoomVC.username = dataSource[indexPath.row].username
         navigationController?.pushViewController(chatRoomVC, animated: true)
     }
     

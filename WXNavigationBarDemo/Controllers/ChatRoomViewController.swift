@@ -13,9 +13,14 @@ class ChatRoomViewController: UIViewController {
 
     private var tableView: UITableView!
     
+    var username: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = UIColor(white: 237.0/255, alpha: 1.0)
+        
+        title = username
         setupTableView()
     }
     
@@ -28,9 +33,15 @@ class ChatRoomViewController: UIViewController {
         tableView.delegate = self
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
         view.addSubview(tableView)
     }
-
+    
+    // MARK: - WXNavigationBar
+    
+    override var wx_useSystemBlurNavBar: Bool {
+        return true
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -45,7 +56,10 @@ extension ChatRoomViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self), for: indexPath)
+        cell.backgroundColor = .red
+        cell.textLabel?.text = "\(indexPath.row)"
+        return cell
     }
     
 }
