@@ -20,3 +20,18 @@ func swizzleMethod(_ cls: AnyClass, _ originSelector: Selector, _ newSelector: S
         method_exchangeImplementations(oriMethod, newMethod)
     }
 }
+
+class Utility {
+    
+    static var bundle: Bundle? = {
+        let current = Bundle(for: Utility.self)
+        if let path = current.path(forResource: "Resources", ofType: "bundle") {
+            return Bundle(path: path)
+        }
+        return nil
+    }()
+    
+    class func image(named name: String) -> UIImage? {
+        return UIImage(named: name, in: bundle, compatibleWith: nil)
+    }
+}

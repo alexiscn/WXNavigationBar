@@ -19,6 +19,14 @@
 		A369A5802402B026009A1396 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369A57F2402B026009A1396 /* MeViewController.swift */; };
 		A369A5822402B035009A1396 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369A5812402B035009A1396 /* RootViewController.swift */; };
 		A369A5842402BA05009A1396 /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369A5832402BA05009A1396 /* ChatRoomViewController.swift */; };
+		A369A5882402BB35009A1396 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369A5872402BB35009A1396 /* Session.swift */; };
+		A369A58C24036B84009A1396 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369A58B24036B84009A1396 /* Contact.swift */; };
+		A369A58F24036C3F009A1396 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = A369A58E24036C3F009A1396 /* data.json */; };
+		A369A592240375AD009A1396 /* SessionMoreFrameFloatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369A591240375AD009A1396 /* SessionMoreFrameFloatView.swift */; };
+		A369A594240375F0009A1396 /* SessionMoreMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369A593240375F0009A1396 /* SessionMoreMenuView.swift */; };
+		A369A5962403761C009A1396 /* SessionMoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369A5952403761C009A1396 /* SessionMoreItem.swift */; };
+		A369A59924037833009A1396 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369A59824037833009A1396 /* Constants.swift */; };
+		A369A59B24037BA5009A1396 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369A59A24037BA5009A1396 /* PaymentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +44,14 @@
 		A369A57F2402B026009A1396 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		A369A5812402B035009A1396 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		A369A5832402BA05009A1396 /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
+		A369A5872402BB35009A1396 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		A369A58B24036B84009A1396 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		A369A58E24036C3F009A1396 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		A369A591240375AD009A1396 /* SessionMoreFrameFloatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionMoreFrameFloatView.swift; sourceTree = "<group>"; };
+		A369A593240375F0009A1396 /* SessionMoreMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionMoreMenuView.swift; sourceTree = "<group>"; };
+		A369A5952403761C009A1396 /* SessionMoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionMoreItem.swift; sourceTree = "<group>"; };
+		A369A59824037833009A1396 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A369A59A24037BA5009A1396 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		DAE969A7AAF992E857E3CE7B /* Pods-WXNavigationBarDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WXNavigationBarDemo.debug.xcconfig"; path = "Target Support Files/Pods-WXNavigationBarDemo/Pods-WXNavigationBarDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		F95D4246861D0B22A0F960D9 /* Pods-WXNavigationBarDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WXNavigationBarDemo.release.xcconfig"; path = "Target Support Files/Pods-WXNavigationBarDemo/Pods-WXNavigationBarDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,14 +97,14 @@
 		A369A55B2402AB14009A1396 /* WXNavigationBarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A369A5972403781E009A1396 /* Common */,
+				A369A5902403759C009A1396 /* Views */,
 				A369A5782402AFFA009A1396 /* Controllers */,
+				A369A58D24036C2E009A1396 /* MockData */,
+				A369A5862402BB24009A1396 /* Models */,
+				A369A5852402BB17009A1396 /* Supporting Files */,
 				A369A55C2402AB14009A1396 /* AppDelegate.swift */,
 				A369A5812402B035009A1396 /* RootViewController.swift */,
-				A369A5602402AB14009A1396 /* ViewController.swift */,
-				A369A5622402AB14009A1396 /* Main.storyboard */,
-				A369A5652402AB1B009A1396 /* Assets.xcassets */,
-				A369A5672402AB1B009A1396 /* LaunchScreen.storyboard */,
-				A369A56A2402AB1B009A1396 /* Info.plist */,
 			);
 			path = WXNavigationBarDemo;
 			sourceTree = "<group>";
@@ -101,8 +117,56 @@
 				A369A57D2402B01E009A1396 /* DiscoverViewController.swift */,
 				A369A57F2402B026009A1396 /* MeViewController.swift */,
 				A369A5832402BA05009A1396 /* ChatRoomViewController.swift */,
+				A369A59A24037BA5009A1396 /* PaymentViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A369A5852402BB17009A1396 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A369A5622402AB14009A1396 /* Main.storyboard */,
+				A369A5672402AB1B009A1396 /* LaunchScreen.storyboard */,
+				A369A5602402AB14009A1396 /* ViewController.swift */,
+				A369A5652402AB1B009A1396 /* Assets.xcassets */,
+				A369A56A2402AB1B009A1396 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A369A5862402BB24009A1396 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A369A5872402BB35009A1396 /* Session.swift */,
+				A369A58B24036B84009A1396 /* Contact.swift */,
+				A369A5952403761C009A1396 /* SessionMoreItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A369A58D24036C2E009A1396 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				A369A58E24036C3F009A1396 /* data.json */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		A369A5902403759C009A1396 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A369A591240375AD009A1396 /* SessionMoreFrameFloatView.swift */,
+				A369A593240375F0009A1396 /* SessionMoreMenuView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A369A5972403781E009A1396 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A369A59824037833009A1396 /* Constants.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		F922B3087210E8367CEC1218 /* Pods */ = {
@@ -174,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A369A58F24036C3F009A1396 /* data.json in Resources */,
 				A369A5692402AB1B009A1396 /* LaunchScreen.storyboard in Resources */,
 				A369A5662402AB1B009A1396 /* Assets.xcassets in Resources */,
 				A369A5642402AB14009A1396 /* Main.storyboard in Resources */,
@@ -231,12 +296,19 @@
 			files = (
 				A369A5802402B026009A1396 /* MeViewController.swift in Sources */,
 				A369A57A2402B00B009A1396 /* SessionViewController.swift in Sources */,
+				A369A592240375AD009A1396 /* SessionMoreFrameFloatView.swift in Sources */,
 				A369A57C2402B015009A1396 /* ContactsViewController.swift in Sources */,
 				A369A5842402BA05009A1396 /* ChatRoomViewController.swift in Sources */,
+				A369A58C24036B84009A1396 /* Contact.swift in Sources */,
 				A369A5822402B035009A1396 /* RootViewController.swift in Sources */,
+				A369A59B24037BA5009A1396 /* PaymentViewController.swift in Sources */,
+				A369A5962403761C009A1396 /* SessionMoreItem.swift in Sources */,
+				A369A594240375F0009A1396 /* SessionMoreMenuView.swift in Sources */,
 				A369A5612402AB14009A1396 /* ViewController.swift in Sources */,
 				A369A55D2402AB14009A1396 /* AppDelegate.swift in Sources */,
+				A369A59924037833009A1396 /* Constants.swift in Sources */,
 				A369A57E2402B01E009A1396 /* DiscoverViewController.swift in Sources */,
+				A369A5882402BB35009A1396 /* Session.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,7 +455,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LX863G777H;
-				INFOPLIST_FILE = WXNavigationBarDemo/Info.plist;
+				INFOPLIST_FILE = "WXNavigationBarDemo/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -403,7 +475,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LX863G777H;
-				INFOPLIST_FILE = WXNavigationBarDemo/Info.plist;
+				INFOPLIST_FILE = "WXNavigationBarDemo/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

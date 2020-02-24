@@ -7,7 +7,7 @@
 
 import UIKit
 
-public extension UIViewController {
+extension UIViewController {
     
     private struct AssociatedKeys {
         static var barBackgroundColor = "barBackgroundColor"
@@ -29,7 +29,7 @@ public extension UIViewController {
     }
     
     /// Setting background color of Fake NavigationBar
-    @objc var wx_navigationBarBackgroundColor: UIColor? {
+    @objc open var wx_navigationBarBackgroundColor: UIColor? {
         if let color = objc_getAssociatedObject(self, &AssociatedKeys.barBackgroundColor) as? UIColor {
             return color
         }
@@ -38,7 +38,7 @@ public extension UIViewController {
         return color
     }
     
-    @objc var wx_useSystemBlurNavBar: Bool {
+    @objc open var wx_useSystemBlurNavBar: Bool {
         if let use = objc_getAssociatedObject(self, &AssociatedKeys.useSystemBlurNavBar) as? Bool {
             return use
         }
@@ -47,7 +47,7 @@ public extension UIViewController {
         return use
     }
     
-    @objc var wx_barBarTintColor: UIColor? {
+    @objc open var wx_barBarTintColor: UIColor? {
         if let barBarTintColor = objc_getAssociatedObject(self, &AssociatedKeys.barBarTintColor) as? UIColor {
             return barBarTintColor
         }
@@ -55,7 +55,7 @@ public extension UIViewController {
         return nil
     }
     
-    @objc var wx_barTintColor: UIColor? {
+    @objc open var wx_barTintColor: UIColor? {
         if let tintColor = objc_getAssociatedObject(self, &AssociatedKeys.barTintColor) as? UIColor {
             return tintColor
         }
@@ -64,7 +64,7 @@ public extension UIViewController {
         return tintColor
     }
     
-    @objc var wx_titleTextAttributes: [NSAttributedString.Key: Any]? {
+    @objc open var wx_titleTextAttributes: [NSAttributedString.Key: Any]? {
         if let attributes = objc_getAssociatedObject(self, &AssociatedKeys.titleTextAttributes) as? [NSAttributedString.Key: Any] {
             return attributes
         }
@@ -73,7 +73,7 @@ public extension UIViewController {
         return attributes
     }
     
-    static let wx_swizzle: Void = {
+    public static let wx_swizzle: Void = {
         let cls = UIViewController.self
         swizzleMethod(cls, #selector(UIViewController.viewDidLoad), #selector(UIViewController.wx_viewDidLoad))
         swizzleMethod(cls, #selector(UIViewController.viewWillLayoutSubviews), #selector(UIViewController.wx_viewWillLayoutSubviews))

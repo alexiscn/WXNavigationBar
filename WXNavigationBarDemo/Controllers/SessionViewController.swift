@@ -14,9 +14,18 @@ class SessionViewController: UIViewController {
     
     private var dataSource: [String] = []
     
+    private lazy var menuFloatView: SessionMoreFrameFloatView = {
+        let y = Constants.statusBarHeight + 44
+        let frame = CGRect(x: 0, y: y, width: view.bounds.width, height: view.bounds.height - y)
+        let floatView = SessionMoreFrameFloatView(frame: frame)
+        floatView.delegate = self
+        return floatView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = UIColor(white: 237.0/255, alpha: 1.0)
         setupNavigationBar()
         setupTableView()
     }
@@ -28,15 +37,29 @@ class SessionViewController: UIViewController {
     
     private func setupTableView() {
         tableView = UITableView(frame: view.bounds)
+        tableView.backgroundColor = .clear
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.tableFooterView = UIView()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
         view.addSubview(tableView)
     }
 
     @objc private func handleRightBarButtonTapped(_ sender: Any) {
-        
+        if self.menuFloatView.superview != nil {
+            hideMoreMenu()
+        } else {
+            showMoreMenu()
+        }
+    }
+    
+    private func showMoreMenu() {
+        menuFloatView.show(in: self.view)
+    }
+    
+    private func hideMoreMenu(animated: Bool = true) {
+        menuFloatView.hide(animated: animated)
     }
     
 }
@@ -61,4 +84,19 @@ extension SessionViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension SessionViewController: UITableViewDelegate {
     
+}
+
+// MARK: - SessionMoreMenuViewDelegate
+extension SessionViewController: SessionMoreMenuViewDelegate {
+    
+    func moreMenuView(_ menu: SessionMoreMenuView, didTap item: SessionMoreItem) {
+        switch item.type {
+        case .money:
+            let paymentVC = PaymentViewController()
+            navigationController?.pushViewController(paymentVC, animated: true)
+        default:
+            break
+        }
+        hideMoreMenu(animated: false)
+    }
 }
