@@ -12,7 +12,7 @@ class SessionViewController: UIViewController {
 
     private var tableView: UITableView!
     
-    private var dataSource: [String] = []
+    private var dataSource: [Session] = []
     
     private lazy var menuFloatView: SessionMoreFrameFloatView = {
         let y = Constants.statusBarHeight + 44
@@ -28,6 +28,7 @@ class SessionViewController: UIViewController {
         view.backgroundColor = UIColor(white: 237.0/255, alpha: 1.0)
         setupNavigationBar()
         setupTableView()
+        loadSessions()
     }
     
     private func setupNavigationBar() {
@@ -42,8 +43,27 @@ class SessionViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
+        tableView.separatorColor = UIColor(white: 0, alpha: 0.15)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
         view.addSubview(tableView)
+    }
+    
+    private func loadSessions() {
+        DispatchQueue.global().async {
+            guard let url = Bundle.main.url(forResource: "session", withExtension: "json"),
+                let data = try? Data(contentsOf: url) else {
+                return
+            }
+            do {
+                let sessions = try JSONDecoder().decode([Session].self, from: data)
+                DispatchQueue.main.async {
+                    self.dataSource = sessions
+                    self.tableView.reloadData()
+                }
+            } catch {
+                print(error)
+            }
+        }
     }
 
     @objc private func handleRightBarButtonTapped(_ sender: Any) {
@@ -76,13 +96,30 @@ extension SessionViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let session = dataSource[indexPath.row]
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self), for: indexPath)
+        cell.imageView?.frame.size = CGSize(width: 40, height: 40)
+        let placeholder = UIImage(named: "DefaultHead_48x48_")
+        cell.imageView?.kf.setImage(with: session.avatar, placeholder: placeholder)
+        cell.textLabel?.text = session.username
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 56.0
     }
 }
 
 // MARK: - UITableViewDelegate
 extension SessionViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        let chatRoomVC = ChatRoomViewController()
+        navigationController?.pushViewController(chatRoomVC, animated: true)
+    }
     
 }
 

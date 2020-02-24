@@ -19,7 +19,7 @@ extension UIViewController {
     }
     
     /// Fake NavigationBar
-    var wx_navigationBar: UIView {
+    open var wx_navigationBar: UIView {
         if let bar = objc_getAssociatedObject(self, &AssociatedKeys.fakeNavigationBar) as? UIView {
             return bar
         }
@@ -38,6 +38,7 @@ extension UIViewController {
         return color
     }
     
+    /// Use the system blured navigation bar
     @objc open var wx_useSystemBlurNavBar: Bool {
         if let use = objc_getAssociatedObject(self, &AssociatedKeys.useSystemBlurNavBar) as? Bool {
             return use
@@ -120,10 +121,7 @@ extension UIViewController {
         wx_viewWillAppear(animated)
     }
     
-    
     @objc private func wx_viewDidAppear(_ animated: Bool) {
-        // 修正在TabBarController中使用了返回了手势，导致Push卡死的现象
-        // 当导航栏中只有一个ViewController时禁用返回手势
         if let navigationController = self.navigationController {
             navigationController.interactivePopGestureRecognizer?.isEnabled = navigationController.viewControllers.count > 1
         }

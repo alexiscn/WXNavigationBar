@@ -38,7 +38,7 @@ class ContactsViewController: UIViewController {
 
     private func setupDataSource() {
         DispatchQueue.global().async {
-            guard let url = Bundle.main.url(forResource: "data", withExtension: "json"),
+            guard let url = Bundle.main.url(forResource: "contacts", withExtension: "json"),
                 let data = try? Data(contentsOf: url) else {
                 return
             }
@@ -75,7 +75,6 @@ extension ContactsViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self), for: indexPath)
         cell.imageView?.frame.size = CGSize(width: 40, height: 40)
-        cell.imageView?.kf.setImage(with: contact.avatar)
         let placeholder = UIImage(named: "DefaultHead_48x48_")
         cell.imageView?.kf.setImage(with: contact.avatar, placeholder: placeholder)
         cell.textLabel?.text = "\(contact.firstName) \(contact.lastName)"
