@@ -20,3 +20,20 @@ pod 'WXNavigationBar'
 # Usage
 
 See the demo.
+
+```swift
+import WXNavigationBar
+
+let controller = Your_ViewController()
+let nav = WXNavigationController(rootViewController: controller)
+```
+
+In Your View Controller
+
+```swift
+
+override var wx_barBarTintColor: UIColor? {
+    return UIColor.red
+}
+
+```
