@@ -37,3 +37,21 @@ override var wx_barBarTintColor: UIColor? {
 }
 
 ```
+
+
+Scenario 1
+---
+
+Push to solid colored navigation bar
+
+
+Scenario 2
+--
+
+Push to transparent navigation bar
+
+
+Scenario 3
+--
+
+Push to system navigation bar

@@ -23,8 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
         
-        UIViewController.wx_swizzle
-        
         return true
     }
 }

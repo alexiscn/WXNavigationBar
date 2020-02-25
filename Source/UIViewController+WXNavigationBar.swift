@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Exentsions that handle navigation bar
 extension UIViewController {
     
     private struct AssociatedKeys {
@@ -18,7 +19,8 @@ extension UIViewController {
         static var useSystemBlurNavBar = "useSystemBlurNavBar"
     }
     
-    /// Fake NavigationBar
+    /// Fake NavigationBar.
+    /// Layout inside view controller, below the actual navigation bar which is transparent
     open var wx_navigationBar: UIView {
         if let bar = objc_getAssociatedObject(self, &AssociatedKeys.fakeNavigationBar) as? UIView {
             return bar
@@ -28,7 +30,8 @@ extension UIViewController {
         return bar
     }
     
-    /// Setting background color of Fake NavigationBar
+    /// Background color of fake NavigationBar
+    /// Default color is UIColor(white: 237.0/255, alpha: 1.0)
     @objc open var wx_navigationBarBackgroundColor: UIColor? {
         if let color = objc_getAssociatedObject(self, &AssociatedKeys.barBackgroundColor) as? UIColor {
             return color
@@ -38,7 +41,8 @@ extension UIViewController {
         return color
     }
     
-    /// Use the system blured navigation bar
+    /// Use the system blured navigation bar.
+    /// Set to `true` if your want the syatem navigation bar
     @objc open var wx_useSystemBlurNavBar: Bool {
         if let use = objc_getAssociatedObject(self, &AssociatedKeys.useSystemBlurNavBar) as? Bool {
             return use
@@ -48,6 +52,7 @@ extension UIViewController {
         return use
     }
     
+    /// Bar tint color of navigationbar
     @objc open var wx_barBarTintColor: UIColor? {
         if let barBarTintColor = objc_getAssociatedObject(self, &AssociatedKeys.barBarTintColor) as? UIColor {
             return barBarTintColor
@@ -56,6 +61,7 @@ extension UIViewController {
         return nil
     }
     
+    /// Tint color of navigationbar
     @objc open var wx_barTintColor: UIColor? {
         if let tintColor = objc_getAssociatedObject(self, &AssociatedKeys.barTintColor) as? UIColor {
             return tintColor
@@ -65,6 +71,7 @@ extension UIViewController {
         return tintColor
     }
     
+    /// Title text attributes of navigationbar
     @objc open var wx_titleTextAttributes: [NSAttributedString.Key: Any]? {
         if let attributes = objc_getAssociatedObject(self, &AssociatedKeys.titleTextAttributes) as? [NSAttributedString.Key: Any] {
             return attributes
@@ -74,7 +81,7 @@ extension UIViewController {
         return attributes
     }
     
-    public static let wx_swizzle: Void = {
+    static let wx_swizzle: Void = {
         let cls = UIViewController.self
         swizzleMethod(cls, #selector(UIViewController.viewDidLoad), #selector(UIViewController.wx_viewDidLoad))
         swizzleMethod(cls, #selector(UIViewController.viewWillLayoutSubviews), #selector(UIViewController.wx_viewWillLayoutSubviews))
@@ -126,5 +133,18 @@ extension UIViewController {
             navigationController.interactivePopGestureRecognizer?.isEnabled = navigationController.viewControllers.count > 1
         }
         wx_viewDidAppear(animated)
+    }
+}
+
+extension UIApplication {
+    
+    private static let runOnce: Void = {
+        UIViewController.wx_swizzle
+    }()
+    
+    override open var next: UIResponder? {
+        // Called before applicationDidFinishLaunching
+        UIApplication.runOnce
+        return super.next
     }
 }
