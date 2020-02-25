@@ -1,6 +1,8 @@
 # WXNavigationBar
 WeChat NavigationBar
 
+![](Assets/navigationbar01.gif)
+
 # Requirements
 
 - iOS 12.0+
