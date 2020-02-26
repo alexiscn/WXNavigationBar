@@ -17,6 +17,7 @@ extension UIViewController {
         static var barTintColor = "barTintColor"
         static var titleTextAttributes = "titleTextAttributes"
         static var useSystemBlurNavBar = "useSystemBlurNavBar"
+        static var hiddenShadowImage = "hiddenShadowImage"
     }
     
     /// Fake NavigationBar.
@@ -81,6 +82,15 @@ extension UIViewController {
         return attributes
     }
     
+    @objc open var wx_hiddenShadowImage: Bool {
+        if let hiddenShadowImage = objc_getAssociatedObject(self, &AssociatedKeys.hiddenShadowImage) as? Bool {
+            return hiddenShadowImage
+        }
+        let hiddenShadowImage = WXNavigationBar.NavBar.isShadowImageHidden
+        objc_setAssociatedObject(self, &AssociatedKeys.hiddenShadowImage, hiddenShadowImage, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        return hiddenShadowImage
+    }
+    
     static let wx_swizzle: Void = {
         let cls = UIViewController.self
         swizzleMethod(cls, #selector(UIViewController.viewDidLoad), #selector(UIViewController.wx_viewDidLoad))
@@ -104,6 +114,7 @@ extension UIViewController {
                 blurView.contentView.backgroundColor = UIColor(white: 229.0/255, alpha: 0.5)
                 wx_navigationBar.addSubview(blurView)
             }
+            navigationController?.navigationBar.shadowImage = wx_hiddenShadowImage ? UIImage() : nil
         }
         
         wx_viewDidLoad()
