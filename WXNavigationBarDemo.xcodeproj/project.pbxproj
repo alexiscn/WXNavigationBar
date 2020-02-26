@@ -30,6 +30,7 @@
 		A369A59D24039993009A1396 /* MomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369A59C24039993009A1396 /* MomentsViewController.swift */; };
 		A369A59F240399A8009A1396 /* Discover.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369A59E240399A8009A1396 /* Discover.swift */; };
 		A369A5A12403C97F009A1396 /* session.json in Resources */ = {isa = PBXBuildFile; fileRef = A369A5A02403C97F009A1396 /* session.json */; };
+		A369A5AB240696A5009A1396 /* MomentHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369A5AA240696A5009A1396 /* MomentHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		A369A59C24039993009A1396 /* MomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsViewController.swift; sourceTree = "<group>"; };
 		A369A59E240399A8009A1396 /* Discover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discover.swift; sourceTree = "<group>"; };
 		A369A5A02403C97F009A1396 /* session.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = session.json; sourceTree = "<group>"; };
+		A369A5AA240696A5009A1396 /* MomentHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentHeaderView.swift; sourceTree = "<group>"; };
 		DAE969A7AAF992E857E3CE7B /* Pods-WXNavigationBarDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WXNavigationBarDemo.debug.xcconfig"; path = "Target Support Files/Pods-WXNavigationBarDemo/Pods-WXNavigationBarDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		F95D4246861D0B22A0F960D9 /* Pods-WXNavigationBarDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WXNavigationBarDemo.release.xcconfig"; path = "Target Support Files/Pods-WXNavigationBarDemo/Pods-WXNavigationBarDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,6 +168,7 @@
 			children = (
 				A369A591240375AD009A1396 /* SessionMoreFrameFloatView.swift */,
 				A369A593240375F0009A1396 /* SessionMoreMenuView.swift */,
+				A369A5AA240696A5009A1396 /* MomentHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				A369A5842402BA05009A1396 /* ChatRoomViewController.swift in Sources */,
 				A369A58C24036B84009A1396 /* Contact.swift in Sources */,
 				A369A5822402B035009A1396 /* RootViewController.swift in Sources */,
+				A369A5AB240696A5009A1396 /* MomentHeaderView.swift in Sources */,
 				A369A59B24037BA5009A1396 /* PaymentViewController.swift in Sources */,
 				A369A59D24039993009A1396 /* MomentsViewController.swift in Sources */,
 				A369A5962403761C009A1396 /* SessionMoreItem.swift in Sources */,
