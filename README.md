@@ -61,7 +61,7 @@ Scenario 2
 
 Push to transparent navigation bar
 
-![](Assets/navigationbar01.gif)
+![](Assets/navigationbar02.gif)
 
 See `MomentViewController` in the demo.
 
