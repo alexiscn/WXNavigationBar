@@ -47,14 +47,44 @@ Scenario 1
 
 Push to solid colored navigation bar
 
+See `PaymentViewController` in the demo.
+
+```swift
+override var wx_navigationBarBackgroundColor: UIColor? {
+    return UIColor(red: 67.0/255, green: 144.0/255, blue: 87.0/255, alpha: 1.0)
+}
+```
+
 
 Scenario 2
 --
 
 Push to transparent navigation bar
 
+![](Assets/navigationbar01.gif)
+
+See `MomentViewController` in the demo.
+
+```swift
+
+override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    // make the navigation bar transparent
+    wc_navigationBar.alpha = 0
+}
+
+```
 
 Scenario 3
 --
 
 Push to system navigation bar
+
+See `ChatRoomViewController` in the demo.
+
+```swift
+override var wx_useSystemBlurNavBar: Bool {
+    return true
+}
+```
