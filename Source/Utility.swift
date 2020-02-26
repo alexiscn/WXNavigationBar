@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+
 func swizzleMethod(_ cls: AnyClass, _ originSelector: Selector, _ newSelector: Selector) {
     guard let oriMethod = class_getInstanceMethod(cls, originSelector),
         let newMethod = class_getInstanceMethod(cls, newSelector) else {
@@ -33,5 +35,10 @@ class Utility {
     
     class func image(named name: String) -> UIImage? {
         return UIImage(named: name, in: bundle, compatibleWith: nil)
+    }
+    
+    static var navigationBarHeight: CGFloat {
+        let top = UIApplication.shared.keyWindow?.safeAreaInsets.top ?? 0
+        return top > 0 ? 88.0 : 64.0
     }
 }

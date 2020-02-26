@@ -24,17 +24,20 @@ See the demo.
 ```swift
 import WXNavigationBar
 
-let controller = Your_ViewController()
+let controller = ViewController()
 let nav = WXNavigationController(rootViewController: controller)
 ```
 
-In Your View Controller
+### Configuration
+
+In your AppDelegate
 
 ```swift
 
-override var wx_barBarTintColor: UIColor? {
-    return UIColor.red
-}
+import WXNavigationBar
+
+WXNavigationBar.NavBar.backImage = UIImage(named: "xxx")
+WXNavigationBar.NavBar.isShadowImageHidden = false
 
 ```
 

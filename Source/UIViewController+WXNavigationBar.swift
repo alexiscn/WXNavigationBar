@@ -21,11 +21,11 @@ extension UIViewController {
     
     /// Fake NavigationBar.
     /// Layout inside view controller, below the actual navigation bar which is transparent
-    open var wx_navigationBar: UIView {
-        if let bar = objc_getAssociatedObject(self, &AssociatedKeys.fakeNavigationBar) as? UIView {
+    open var wx_navigationBar: WXNavigationBar {
+        if let bar = objc_getAssociatedObject(self, &AssociatedKeys.fakeNavigationBar) as? WXNavigationBar {
             return bar
         }
-        let bar = UIView()
+        let bar = WXNavigationBar(frame: .zero)
         objc_setAssociatedObject(self, &AssociatedKeys.fakeNavigationBar, bar, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return bar
     }
@@ -36,7 +36,7 @@ extension UIViewController {
         if let color = objc_getAssociatedObject(self, &AssociatedKeys.barBackgroundColor) as? UIColor {
             return color
         }
-        let color = Constants.defaultBackgroundColor
+        let color = WXNavigationBar.NavBar.backgroundColor
         objc_setAssociatedObject(self, &AssociatedKeys.barBackgroundColor, color, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return color
     }
@@ -66,7 +66,7 @@ extension UIViewController {
         if let tintColor = objc_getAssociatedObject(self, &AssociatedKeys.barTintColor) as? UIColor {
             return tintColor
         }
-        let tintColor = Constants.defaultTintColor
+        let tintColor = WXNavigationBar.NavBar.tintColor
         objc_setAssociatedObject(self, &AssociatedKeys.barTintColor, tintColor, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return tintColor
     }
@@ -99,8 +99,8 @@ extension UIViewController {
                 wx_navigationBar.backgroundColor = .clear
                 let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
                 blurView.frame = CGRect(origin: .zero,
-                                        size: CGSize(width: Constants.screenWidth,
-                                                     height: Constants.navigationBarHeight))
+                                        size: CGSize(width: UIScreen.main.bounds.width,
+                                                     height: Utility.navigationBarHeight))
                 blurView.contentView.backgroundColor = UIColor(white: 229.0/255, alpha: 0.5)
                 wx_navigationBar.addSubview(blurView)
             }
@@ -112,8 +112,8 @@ extension UIViewController {
     @objc private func wx_viewWillLayoutSubviews() {
         if navigationController != nil {
             wx_navigationBar.frame = CGRect(origin: .zero,
-                                            size: CGSize(width: Constants.screenWidth,
-                                                         height: Constants.navigationBarHeight))
+                                            size: CGSize(width: UIScreen.main.bounds.width,
+                                                         height: Utility.navigationBarHeight))
         }
         wx_viewWillLayoutSubviews()
     }
