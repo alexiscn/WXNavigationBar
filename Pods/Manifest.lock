@@ -2,7 +2,7 @@ PODS:
   - Kingfisher (5.13.1):
     - Kingfisher/Core (= 5.13.1)
   - Kingfisher/Core (5.13.1)
-  - WXNavigationBar (1.0.2)
+  - WXNavigationBar (1.0.3)
 
 DEPENDENCIES:
   - Kingfisher
@@ -18,7 +18,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Kingfisher: f33a848445e33c543620812158dc5d47f6bf90df
-  WXNavigationBar: acc3826893ea719fadde5b324bd9da405e45c66d
+  WXNavigationBar: 38713163a718610a98935f37e78e2747120b5f00
 
 PODFILE CHECKSUM: 2dd8664dda0d4db17342c03f72d0324ec4cb9a25
 

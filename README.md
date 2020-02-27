@@ -41,6 +41,8 @@ WXNavigationBar.NavBar.isShadowImageHidden = false
 
 ```
 
+Customize Navigation Bar
+
 
 Scenario 1
 ---

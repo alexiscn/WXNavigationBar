@@ -11,13 +11,14 @@ import UIKit
 extension UIViewController {
     
     private struct AssociatedKeys {
-        static var barBackgroundColor = "barBackgroundColor"
-        static var fakeNavigationBar = "fakeNavigationBar"
-        static var barBarTintColor = "barBarTintColor"
-        static var barTintColor = "barTintColor"
-        static var titleTextAttributes = "titleTextAttributes"
-        static var useSystemBlurNavBar = "useSystemBlurNavBar"
-        static var hiddenShadowImage = "hiddenShadowImage"
+        static var barBackgroundColor = "WXNavigationBar_barBackgroundColor"
+        static var fakeNavigationBar = "WXNavigationBar_fakeNavigationBar"
+        static var barBarTintColor = "WXNavigationBar_barBarTintColor"
+        static var barTintColor = "WXNavigationBar_barTintColor"
+        static var titleTextAttributes = "WXNavigationBar_titleTextAttributes"
+        static var useSystemBlurNavBar = "WXNavigationBar_useSystemBlurNavBar"
+        static var hiddenShadowImage = "WXNavigationBar_hiddenShadowImage"
+        static var backImage = "WXNavigationBar_backImage"
     }
     
     /// Fake NavigationBar.
@@ -89,6 +90,15 @@ extension UIViewController {
         let hiddenShadowImage = WXNavigationBar.NavBar.isShadowImageHidden
         objc_setAssociatedObject(self, &AssociatedKeys.hiddenShadowImage, hiddenShadowImage, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return hiddenShadowImage
+    }
+
+    /// NavigationBar back image
+    @objc open var wx_backImage: UIImage? {
+        if let backImage = objc_getAssociatedObject(self, &AssociatedKeys.backImage) as? UIImage {
+            return backImage
+        }
+        objc_setAssociatedObject(self, &AssociatedKeys.backImage, nil, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        return nil
     }
     
     static let wx_swizzle: Void = {

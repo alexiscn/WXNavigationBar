@@ -25,7 +25,7 @@ public class WXNavigationController: UINavigationController {
     override public func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if viewControllers.count > 0 {
             viewController.hidesBottomBarWhenPushed = true
-            let backImage = WXNavigationBar.NavBar.backImage
+            let backImage = viewController.wx_backImage ?? WXNavigationBar.NavBar.backImage
             let backButtonItem = UIBarButtonItem(image: backImage, style: .plain, target: self, action: #selector(backButtonClicked))
             viewController.navigationItem.leftBarButtonItem = backButtonItem
         }
