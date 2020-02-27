@@ -3,6 +3,13 @@ WeChat NavigationBar
 
 ![](Assets/navigationbar01.gif)
 
+# Features
+
+- Support transparent navigationbar
+- Support navigationbar background image
+- Support navigationbar large title
+- As Simple as using UINavigationBar 
+ 
 # Requirements
 
 - iOS 12.0+
@@ -11,11 +18,15 @@ WeChat NavigationBar
 
 # Installation
 
-WXNavigationBar is available through CocoaPods. To install it, simply add the following line to your Podfile:
+`WXNavigationBar` is available through CocoaPods. To install it, simply add the following line to your Podfile:
 
 ```
 pod 'WXNavigationBar'
 ```
+
+# How it works
+
+`WXNavigation` make the actual UINavigationBar transparent and add a view as a fake navigation bar. 
 
 # Usage
 

@@ -42,6 +42,10 @@ class ChatRoomViewController: UIViewController {
     override var wx_useSystemBlurNavBar: Bool {
         return true
     }
+    
+    override var wx_navigationBarBackgroundImage: UIImage? {
+        return UIImage(named: "icon_nav_bg")
+    }
 }
 
 // MARK: - UITableViewDataSource

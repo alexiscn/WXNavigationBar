@@ -3,6 +3,16 @@ WeChat NavigationBar
 
 ![](Assets/navigationbar01.gif)
 
+
+
+# 特点
+
+- 支持设置导航栏背景颜色
+- 支持设置导航栏背景图片
+- 支持Large Title模式
+- 支持隐藏导航栏底部黑线
+
+
 # Requirements
 
 - iOS 12.0+

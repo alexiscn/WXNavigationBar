@@ -10,7 +10,7 @@ import UIKit
 /// Exentsions that handle navigation bar
 extension UIViewController {
     
-    struct AssociatedKeys {
+    private struct AssociatedKeys {
         static var navigationBar = "WXNavigationBar_navigationBar"
         static var navigationBarBackgroundColor = "WXNavigationBar_navigationBarBackgroundColor"
         static var navigationBarBackgroundImage = "WXNavigationBar_navigationBarBackgroundImage"
@@ -21,6 +21,9 @@ extension UIViewController {
         static var useSystemBlurNavBar = "WXNavigationBar_useSystemBlurNavBar"
         static var shadowImage = "WXNavigationBar_shadowImage"
         static var backImage = "WXNavigationBar_backImage"
+        
+        // For internal usage
+        static var willDisappear = "WXNavigationBar_willDisappear"
     }
     
     /// Fake NavigationBar.
@@ -140,12 +143,25 @@ extension UIViewController {
         return backImage
     }
     
+    private var wx_willDisappear: Bool {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKeys.willDisappear) as? Bool ?? false
+        }
+        set {
+            objc_setAssociatedObject(self,
+                                     &AssociatedKeys.willDisappear,
+                                     newValue,
+                                     .OBJC_ASSOCIATION_ASSIGN)
+        }
+    }
+    
     static let wx_swizzle: Void = {
         let cls = UIViewController.self
         swizzleMethod(cls, #selector(UIViewController.viewDidLoad), #selector(UIViewController.wx_viewDidLoad))
         swizzleMethod(cls, #selector(UIViewController.viewWillLayoutSubviews), #selector(UIViewController.wx_viewWillLayoutSubviews))
         swizzleMethod(cls, #selector(UIViewController.viewWillAppear(_:)), #selector(UIViewController.wx_viewWillAppear(_:)))
         swizzleMethod(cls, #selector(UIViewController.viewDidAppear(_:)), #selector(UIViewController.wx_viewDidAppear(_:)))
+        swizzleMethod(cls, #selector(UIViewController.viewWillDisappear(_:)), #selector(UIViewController.wx_viewWillDisappear(_:)))
     }()
     
     @objc private func wx_viewDidLoad() {
@@ -166,17 +182,30 @@ extension UIViewController {
                 wx_navigationBar.addSubview(blurView)
                 wx_navigationBar.sendSubviewToBack(blurView)
             }
+            
+            navigationController?.navigationBar.frameUpdatedHandler = { [weak self] newFrame in
+                guard let self = self else { return }
+                if self.wx_willDisappear {
+                    // Avoid frame update when swipe back from large title mode to normal
+                    return
+                }
+                let frame = CGRect(x: 0,
+                                   y: 0,
+                                   width: newFrame.width,
+                                   height: newFrame.height + newFrame.origin.y)
+                self.wx_navigationBar.frame = frame
+            }
         }
         
         wx_viewDidLoad()
     }
     
     @objc private func wx_viewWillLayoutSubviews() {
-        if navigationController != nil {
-            wx_navigationBar.frame = CGRect(origin: .zero,
-                                            size: CGSize(width: UIScreen.main.bounds.width,
-                                                         height: Utility.navigationBarHeight))
-        }
+//        if navigationController != nil {
+//            wx_navigationBar.frame = CGRect(origin: .zero,
+//                                            size: CGSize(width: UIScreen.main.bounds.width,
+//                                                         height: Utility.navigationBarHeight))
+//        }
         wx_viewWillLayoutSubviews()
     }
     
@@ -187,7 +216,13 @@ extension UIViewController {
             navigationController?.navigationBar.titleTextAttributes = wx_titleTextAttributes
             view.bringSubviewToFront(wx_navigationBar)
         }
+        wx_willDisappear = false
         wx_viewWillAppear(animated)
+    }
+    
+    @objc private func wx_viewWillDisappear(_ animated: Bool) {
+        wx_willDisappear = true
+        wx_viewWillDisappear(animated)
     }
     
     @objc private func wx_viewDidAppear(_ animated: Bool) {
@@ -202,6 +237,7 @@ extension UIApplication {
     
     private static let runOnce: Void = {
         UIViewController.wx_swizzle
+        UINavigationBar.wx_swizzle
     }()
     
     override open var next: UIResponder? {
