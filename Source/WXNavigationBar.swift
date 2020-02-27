@@ -22,7 +22,35 @@ public class WXNavigationBar: UIView {
         /// Tint Color of WXNavigationBar
         public static var tintColor = UIColor(white: 24.0/255, alpha: 1.0)
         
-        /// Hidden shadow image of NavigationBar. Default value is `true`.
-        public static var isShadowImageHidden = true
+        /// Shadow Image of WXNavigationBar
+        public static var shadowImage: UIImage? = UIImage()
+        
+    }
+    
+    public let shadowImageView: UIImageView
+    
+    public override init(frame: CGRect) {
+        
+        shadowImageView = UIImageView()
+        shadowImageView.contentMode = .scaleAspectFill
+        shadowImageView.clipsToBounds = true
+        
+        super.init(frame: frame)
+        
+        addSubview(shadowImageView)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        let height = 1 / UIScreen.main.scale
+        shadowImageView.frame = CGRect(x: 0,
+                                       y: bounds.height - height,
+                                       width: bounds.width,
+                                       height: height)
     }
 }

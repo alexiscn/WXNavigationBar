@@ -42,8 +42,12 @@ let nav = WXNavigationController(rootViewController: controller)
 ```swift
 import WXNavigationBar
 
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-WXNavigationBar.NavBar.backImage = UIImage("my_back_button_image")
+	// ...
+	WXNavigationBar.NavBar.backImage = UIImage("my_back_button_image")
+
+}
 
 ```
 
@@ -74,7 +78,15 @@ class ViewController: UIViewController {
 有两种方法可以让导航栏透明，将WXNavigationBar的背景颜色设为透明或者将其alpha 设为 0
 
 ```swift
-wx_navigationBar.alpha = 0
+
+override func viewDidLoad() {
+	super.viewDidLoad()
+	
+	wx_navigationBar.alpha = 0	
+
+	// wx_navigationBar.isHidden = true
+}
+
 ```
 
 或者

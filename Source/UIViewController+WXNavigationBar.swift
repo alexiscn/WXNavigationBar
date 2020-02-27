@@ -17,7 +17,7 @@ extension UIViewController {
         static var barTintColor = "WXNavigationBar_barTintColor"
         static var titleTextAttributes = "WXNavigationBar_titleTextAttributes"
         static var useSystemBlurNavBar = "WXNavigationBar_useSystemBlurNavBar"
-        static var hiddenShadowImage = "WXNavigationBar_hiddenShadowImage"
+        static var shadowImage = "WXNavigationBar_shadowImage"
         static var backImage = "WXNavigationBar_backImage"
     }
     
@@ -83,13 +83,14 @@ extension UIViewController {
         return attributes
     }
     
-    @objc open var wx_hiddenShadowImage: Bool {
-        if let hiddenShadowImage = objc_getAssociatedObject(self, &AssociatedKeys.hiddenShadowImage) as? Bool {
-            return hiddenShadowImage
+    /// ShadowImage of Navigation Bar
+    @objc open var wx_shadowImage: UIImage? {
+        if let shadowImage = objc_getAssociatedObject(self, &AssociatedKeys.shadowImage) as? UIImage {
+            return shadowImage
         }
-        let hiddenShadowImage = WXNavigationBar.NavBar.isShadowImageHidden
-        objc_setAssociatedObject(self, &AssociatedKeys.hiddenShadowImage, hiddenShadowImage, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        return hiddenShadowImage
+        let shadowImage = WXNavigationBar.NavBar.shadowImage
+        objc_setAssociatedObject(self, &AssociatedKeys.shadowImage, shadowImage, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        return shadowImage
     }
 
     /// NavigationBar back image
@@ -113,6 +114,7 @@ extension UIViewController {
         
         if navigationController != nil {
             wx_navigationBar.backgroundColor = wx_navigationBarBackgroundColor
+            wx_navigationBar.shadowImageView.image = wx_shadowImage
             view.addSubview(wx_navigationBar)
             
             if wx_useSystemBlurNavBar {
@@ -123,8 +125,8 @@ extension UIViewController {
                                                      height: Utility.navigationBarHeight))
                 blurView.contentView.backgroundColor = UIColor(white: 229.0/255, alpha: 0.5)
                 wx_navigationBar.addSubview(blurView)
+                wx_navigationBar.sendSubviewToBack(blurView)
             }
-            navigationController?.navigationBar.shadowImage = wx_hiddenShadowImage ? UIImage() : nil
         }
         
         wx_viewDidLoad()
