@@ -30,8 +30,10 @@ public class WXNavigationBar: UIView {
         
     }
     
+    /// Bottom line
     public let shadowImageView: UIImageView
     
+    /// Background ImageView
     public let backgroundImageView: UIImageView
     
     public override init(frame: CGRect) {
@@ -61,10 +63,10 @@ public class WXNavigationBar: UIView {
         
         backgroundImageView.frame = bounds
         
-        let height = 1 / UIScreen.main.scale
+        let lineHeight = 1 / UIScreen.main.scale
         shadowImageView.frame = CGRect(x: 0,
-                                       y: bounds.height - height,
+                                       y: bounds.height - lineHeight,
                                        width: bounds.width,
-                                       height: height)
+                                       height: lineHeight)
     }
 }
