@@ -48,7 +48,14 @@ public class WXNavigationBar: UIView {
         shadowImageView.contentMode = .scaleAspectFill
         shadowImageView.clipsToBounds = true
         
-        visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
+        let effect: UIBlurEffect
+        if #available(iOS 13, *) {
+            effect = UIBlurEffect(style: .systemChromeMaterial)
+        } else {
+            effect = UIBlurEffect(style: .extraLight)
+        }
+        
+        visualEffectView = UIVisualEffectView(effect: effect)
         visualEffectView.isHidden = true
         visualEffectView.contentView.backgroundColor = WXNavigationBar.NavBar.backgroundColor.withAlphaComponent(0.5)
         
