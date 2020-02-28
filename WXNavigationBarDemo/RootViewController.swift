@@ -44,10 +44,10 @@ class RootViewController: UITabBarController {
         meVC.tabBarItem.selectedImage = UIImage(named: "icons_filled_me")
         meVC.tabBarItem.image = UIImage(named: "icons_outlined_me")?.withRenderingMode(.alwaysOriginal)
         
-        let chatsNav = WXNavigationController(rootViewController: chatsVC)
-        let contactsNav = WXNavigationController(rootViewController: contactsVC)
-        let discoverNav = WXNavigationController(rootViewController: discoverVC)
-        let meNav = WXNavigationController(rootViewController: meVC)
+        let chatsNav = UINavigationController(rootViewController: chatsVC)
+        let contactsNav = UINavigationController(rootViewController: contactsVC)
+        let discoverNav = UINavigationController(rootViewController: discoverVC)
+        let meNav = UINavigationController(rootViewController: meVC)
         
         viewControllers = [chatsNav, contactsNav, discoverNav, meNav]
         tabBar.tintColor = UIColor(red: 0.0, green: 194.0/255, blue: 95.0/255, alpha: 1.0)

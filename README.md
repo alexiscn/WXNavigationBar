@@ -32,12 +32,6 @@ pod 'WXNavigationBar'
 
 See the demo.
 
-```swift
-import WXNavigationBar
-
-let controller = ViewController()
-let nav = WXNavigationController(rootViewController: controller)
-```
 
 ### Configuration
 

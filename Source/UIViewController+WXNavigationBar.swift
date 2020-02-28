@@ -22,6 +22,8 @@ extension UIViewController {
         static var shadowImage = "WXNavigationBar_shadowImage"
         static var backImage = "WXNavigationBar_backImage"
         
+        static var interactivePopDisabled = "WXNavigationBar_interactivePopDisabled"
+        
         // For internal usage
         static var willDisappear = "WXNavigationBar_willDisappear"
     }
@@ -143,6 +145,17 @@ extension UIViewController {
         return backImage
     }
     
+    @objc open var wx_interactivePopDisabled: Bool {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKeys.interactivePopDisabled) as? Bool ?? false
+        }
+        set {
+            objc_setAssociatedObject(self,
+                                     &AssociatedKeys.interactivePopDisabled,
+                                     newValue, .OBJC_ASSOCIATION_ASSIGN)
+        }
+    }
+    
     private var wx_willDisappear: Bool {
         get {
             return objc_getAssociatedObject(self, &AssociatedKeys.willDisappear) as? Bool ?? false
@@ -158,7 +171,6 @@ extension UIViewController {
     static let wx_swizzle: Void = {
         let cls = UIViewController.self
         swizzleMethod(cls, #selector(UIViewController.viewDidLoad), #selector(UIViewController.wx_viewDidLoad))
-        swizzleMethod(cls, #selector(UIViewController.viewWillLayoutSubviews), #selector(UIViewController.wx_viewWillLayoutSubviews))
         swizzleMethod(cls, #selector(UIViewController.viewWillAppear(_:)), #selector(UIViewController.wx_viewWillAppear(_:)))
         swizzleMethod(cls, #selector(UIViewController.viewDidAppear(_:)), #selector(UIViewController.wx_viewDidAppear(_:)))
         swizzleMethod(cls, #selector(UIViewController.viewWillDisappear(_:)), #selector(UIViewController.wx_viewWillDisappear(_:)))
@@ -174,19 +186,16 @@ extension UIViewController {
             
             if wx_useSystemBlurNavBar {
                 wx_navigationBar.backgroundColor = .clear
-                let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
-                blurView.frame = CGRect(origin: .zero,
-                                        size: CGSize(width: UIScreen.main.bounds.width,
-                                                     height: Utility.navigationBarHeight))
-                blurView.contentView.backgroundColor = UIColor(white: 229.0/255, alpha: 0.5)
-                wx_navigationBar.addSubview(blurView)
-                wx_navigationBar.sendSubviewToBack(blurView)
+                wx_navigationBar.backgroundImageView.isHidden = true
+                wx_navigationBar.visualEffectView.isHidden = false
             }
             
             navigationController?.navigationBar.frameUpdatedHandler = { [weak self] newFrame in
+                
                 guard let self = self else { return }
+                
+                // Avoid frame update when swipe back from large title mode to normal
                 if self.wx_willDisappear {
-                    // Avoid frame update when swipe back from large title mode to normal
                     return
                 }
                 let frame = CGRect(x: 0,
@@ -198,15 +207,6 @@ extension UIViewController {
         }
         
         wx_viewDidLoad()
-    }
-    
-    @objc private func wx_viewWillLayoutSubviews() {
-//        if navigationController != nil {
-//            wx_navigationBar.frame = CGRect(origin: .zero,
-//                                            size: CGSize(width: UIScreen.main.bounds.width,
-//                                                         height: Utility.navigationBarHeight))
-//        }
-        wx_viewWillLayoutSubviews()
     }
     
     @objc private func wx_viewWillAppear(_ animated: Bool) {
@@ -236,6 +236,7 @@ extension UIViewController {
 extension UIApplication {
     
     private static let runOnce: Void = {
+        UINavigationController.wx_navswizzle
         UIViewController.wx_swizzle
         UINavigationBar.wx_swizzle
     }()

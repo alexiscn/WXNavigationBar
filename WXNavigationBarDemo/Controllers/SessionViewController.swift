@@ -122,6 +122,10 @@ extension SessionViewController: UITableViewDelegate {
         navigationController?.pushViewController(chatRoomVC, animated: true)
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    
+    }
+    
 }
 
 // MARK: - SessionMoreMenuViewDelegate

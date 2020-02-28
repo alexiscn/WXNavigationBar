@@ -27,6 +27,7 @@ class MomentsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = UIColor(white: 51.0/255, alpha: 1.0)
         setupTableView()
         setupNavigationBar()
     }

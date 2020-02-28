@@ -7,10 +7,10 @@
 
 import UIKit
 
+typealias NavigationBarFrameUpdatedHandler = (CGRect) -> Void
+
 // Expericemental
 extension UINavigationBar {
-    
-    typealias NavigationBarFrameUpdatedHandler = (CGRect) -> Void
     
     private struct AssociatedKeys {
         static var frameUpdatedHandler = "WXNavigationBar_frameUpdatedHandler"
@@ -29,7 +29,7 @@ extension UINavigationBar {
             objc_setAssociatedObject(self,
                                      &AssociatedKeys.frameUpdatedHandler,
                                      newValue,
-                                     .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+                                     .OBJC_ASSOCIATION_COPY_NONATOMIC)
         }
     }
 

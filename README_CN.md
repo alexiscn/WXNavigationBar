@@ -35,14 +35,6 @@ pod 'WXNavigationBar'
 
 # 使用方法
 
-See the demo.
-
-```swift
-import WXNavigationBar
-
-let controller = ViewController()
-let nav = WXNavigationController(rootViewController: controller)
-```
 
 ### 自定义返回按钮
 

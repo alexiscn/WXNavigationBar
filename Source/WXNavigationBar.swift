@@ -36,6 +36,8 @@ public class WXNavigationBar: UIView {
     /// Background ImageView
     public let backgroundImageView: UIImageView
     
+    public let visualEffectView: UIVisualEffectView
+    
     public override init(frame: CGRect) {
         
         backgroundImageView = UIImageView()
@@ -46,9 +48,14 @@ public class WXNavigationBar: UIView {
         shadowImageView.contentMode = .scaleAspectFill
         shadowImageView.clipsToBounds = true
         
+        visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
+        visualEffectView.isHidden = true
+        visualEffectView.contentView.backgroundColor = WXNavigationBar.NavBar.backgroundColor.withAlphaComponent(0.5)
+        
         super.init(frame: frame)
         
         addSubview(backgroundImageView)
+        addSubview(visualEffectView)
         addSubview(shadowImageView)
         
         backgroundImageView.image = WXNavigationBar.NavBar.backgroundImage
@@ -61,6 +68,7 @@ public class WXNavigationBar: UIView {
     public override func layoutSubviews() {
         super.layoutSubviews()
         
+        visualEffectView.frame = bounds
         backgroundImageView.frame = bounds
         
         let lineHeight = 1 / UIScreen.main.scale
