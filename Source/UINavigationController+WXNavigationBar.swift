@@ -63,4 +63,8 @@ extension UINavigationController {
     @objc private func backButtonClicked() {
         popViewController(animated: true)
     }
+    
+    open override var childForStatusBarStyle: UIViewController? {
+        return topViewController
+    }
 }
