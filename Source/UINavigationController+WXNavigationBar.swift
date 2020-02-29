@@ -36,20 +36,16 @@ extension UINavigationController {
     
     static let wx_navswizzle: Void = {
         let cls = UINavigationController.self
-        swizzleMethod(cls, #selector(UINavigationController.viewDidLoad), #selector(UINavigationController.nav_viewDidLoad))
         swizzleMethod(cls, #selector(UINavigationController.pushViewController(_:animated:)), #selector(UINavigationController.wx_pushViewController(_:animated:)))
     }()
     
-    @objc private func nav_viewDidLoad() {
-        
+    func configureNavigationBar() {
         navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.shadowImage = UIImage()
         navigationBar.isTranslucent = true
         
         wx_gestureDelegate = _WXNavigationGestureRecognizerDelegate(navigationController: self)
-        self.interactivePopGestureRecognizer?.delegate = wx_gestureDelegate
-        
-        nav_viewDidLoad()
+        interactivePopGestureRecognizer?.delegate = wx_gestureDelegate
     }
     
     @objc private func wx_pushViewController(_ viewController: UIViewController, animated: Bool) {
