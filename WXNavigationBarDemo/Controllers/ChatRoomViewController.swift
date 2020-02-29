@@ -46,6 +46,10 @@ class ChatRoomViewController: UIViewController {
     override var wx_navigationBarBackgroundImage: UIImage? {
         return UIImage(named: "icon_nav_bg")
     }
+    
+    override var wx_interactivePopEnabled: Bool {
+        return true
+    }
 }
 
 // MARK: - UITableViewDataSource

@@ -8,6 +8,7 @@ WeChat NavigationBar
 - Support transparent navigationbar
 - Support navigationbar background image
 - Support navigationbar large title
+- Support fullscreen pop gesture
 - As Simple as using UINavigationBar 
  
 # Requirements
@@ -35,14 +36,20 @@ See the demo.
 
 ### Configuration
 
-In your AppDelegate
+In your `AppDelegate.swift`
 
 ```swift
 
 import WXNavigationBar
 
-WXNavigationBar.NavBar.backImage = UIImage(named: "xxx")
-WXNavigationBar.NavBar.isShadowImageHidden = false
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+    // ...
+    
+    // configure WXNavigationBar
+    WXNavigationBar.NavBar.backImage = UIImage(named: "xxx")
+    WXNavigationBar.NavBar.isShadowImageHidden = false
+}
 
 ```
 

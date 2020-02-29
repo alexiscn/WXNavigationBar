@@ -10,6 +10,7 @@ WeChat NavigationBar
 - 支持设置导航栏背景颜色
 - 支持设置导航栏背景图片
 - 支持Large Title模式
+- 支持全屏手势返回
 - 支持隐藏导航栏底部黑线
 
 
@@ -34,6 +35,23 @@ pod 'WXNavigationBar'
 
 
 # 使用方法
+
+在`AppDelegate.swift`中全局配置，可选
+
+```swift
+
+import WXNavigationBar
+
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+    // ...
+    
+    // configure WXNavigationBar
+    WXNavigationBar.NavBar.backImage = UIImage(named: "xxx")
+    WXNavigationBar.NavBar.isShadowImageHidden = false
+}
+
+```
 
 
 ### 自定义返回按钮
