@@ -17,7 +17,7 @@
                BlueprintIdentifier = "65817C377231320607BD620F51F5B439"
                BuildableName = "WXNavigationBar.framework"
                BlueprintName = "WXNavigationBar"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
