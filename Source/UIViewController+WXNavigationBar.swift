@@ -146,6 +146,8 @@ extension UIViewController {
         return backImage
     }
     
+    /// A Boolean value indicating whether fullscreen pop gesture is enabled.
+    /// The default value of this property is `WXNavigationBar.NavBar.fullscreenPopGestureEnabled`.
     @objc open var wx_interactivePopEnabled: Bool {
         if let interactivePopEnabled = objc_getAssociatedObject(self, &AssociatedKeys.interactiveEnabled) as? Bool {
             return interactivePopEnabled

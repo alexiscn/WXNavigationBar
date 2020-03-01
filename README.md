@@ -11,8 +11,8 @@ WeChat NavigationBar
 * [Installation](#installation)
 * [Design Principle](#design-principle)
 * [Getting Started](#getting-started)
-    * [UINavigationController based configuration](#uinavigationcontroller-based-configuration)
-    * [ViewController based configuration](#viewcontroller-based-configuration)
+   * [UINavigationController based configuration](#uinavigationcontroller-based-configuration)
+   * [ViewController based configuration](#viewcontroller-based-configuration)
       * [Background Color](#background-color)
       * [Background Image](#background-image)
       * [System blur navigation bar](#system-blur-navigation-bar)
@@ -23,11 +23,12 @@ WeChat NavigationBar
       * [fullscreen interactive pop gesture](#fullscreen-interactive-pop-gesture)
       * [interactivePopMaxAllowedInitialDistanceToLeftEdge](#interactivepopmaxallowedinitialdistancetoleftedge)
 * [Advance usage](#advance-usage)
-    * [Transparent Navigation Bar](#transparent-navigation-bar)
-      * [alpha](#alpha)
-      * [hidden](#hidden)
-      * [background color](#background-color-1)
-    * [Dynamic update navigation bar](#dynamic-update-navigation-bar)
+   * [Transparent Navigation Bar](#transparent-navigation-bar)
+     * [alpha](#alpha)
+     * [hidden](#hidden)
+     * [background color](#background-color-1)
+   * [Dynamic update navigation bar](#dynamic-update-navigation-bar)
+   * [wx_navigationBar](#wx_navigationbar)
 
 <!-- Toc End -->
 
@@ -67,7 +68,7 @@ So you use navigation bar as usual. when you want to handle the display things, 
 
 ## Getting Started
 
-There is no setup needed for using WXNavigationBar. However you can customize WXNavigationBar if needed.
+There is no setup needed for using WXNavigationBar. However you can customize WXNavigationBar if needed. There are two ways to configure WXNavigationBar: via `UINavigationController.Nav` and via `UIViewController` properties.
 
 ### UINavigationController based configuration
 
@@ -82,12 +83,12 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     // ...
     
     // Customize WXNavigationBar if needed (Optional)
-    WXNavigationBar.NavBar.backImage = UIImage(named: "xxx")
+    // WXNavigationBar.NavBar.backImage = UIImage(named: "xxx")
 }
 
 ```
 
-Options:
+You can configure following options:
 
 ```swift
 /// Back Image for Navigation Bar
@@ -111,7 +112,11 @@ public static var fullscreenPopGestureEnabled = false
 
 ### ViewController based configuration
 
+You can also configure specific view controller by override properties that `WXNavigationBar` supported.
+
 #### Background Color
+
+You can configure background color of navigation bar.
 
 ```swift
 /// Background color of fake NavigationBar
@@ -122,6 +127,8 @@ override var wx_navigationBarBackgroundColor: UIColor? {
 ```
 
 #### Background Image
+
+You can confgiure navigation bar background using image.
 
 ```swift
 override var wx_navigationBarBackgroundImage: UIImage? {
@@ -141,6 +148,8 @@ override var wx_useSystemBlurNavBar: Bool {
 
 #### NavigationBar bar tint color
 
+By setting `wx_barBarTintColor`, you actually setting `barTintColor` of `navigationController?.navigationBar`
+
 ```swift
 override var wx_barBarTintColor: UIColor? {
     return .red
@@ -148,6 +157,8 @@ override var wx_barBarTintColor: UIColor? {
 ```
 
 #### NavigationBar tint color
+
+By setting `wx_baTintColor`, you actually setting `tintColor` of `navigationController?.navigationBar`
 
 ```swift
 override var wx_barTintColor: UIColor? {
@@ -193,7 +204,7 @@ override wx_interactivePopMaxAllowedInitialDistanceToLeftEdge: CGFloat {
 
 ## Advance usage
 
-Here is some 
+Here is some adavnce usage suggestions for `WXNavigationBar`.
 
 ### Transparent Navigation Bar
 
@@ -219,7 +230,12 @@ override var wx_navigationBarBackgroundColor: UIColor? {
 }
 ```
 
-
 ### Dynamic update navigation bar
 
-You can dynamic update
+You can dynamic update navigation bar, such as dynamic update through scrolling.
+
+See `MomentViewController` for details.
+
+### wx_navigationBar
+
+`wx_navigationBar` is a subclass of UIView, so you can do anything to `wx_navigationBar` that can be done with UIView.
