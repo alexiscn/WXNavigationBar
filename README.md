@@ -5,11 +5,11 @@ WeChat NavigationBar
 
 # Features
 
-- Support transparent navigationbar
-- Support navigationbar background image
-- Support navigationbar large title
-- Support fullscreen pop gesture
-- As Simple as using UINavigationBar 
+- [x] Support transparent navigationbar
+- [x] Support navigationbar background image
+- [x] Support navigationbar large title
+- [x] Support fullscreen pop gesture
+- [x] As Simple as using UINavigationBar 
  
 # Requirements
 
@@ -22,17 +22,18 @@ WeChat NavigationBar
 `WXNavigationBar` is available through CocoaPods. To install it, simply add the following line to your Podfile:
 
 ```
+use_frameworks!
+
 pod 'WXNavigationBar'
 ```
 
-# How it works
+# Design Principle
 
 `WXNavigation` make the actual UINavigationBar transparent and add a view as a fake navigation bar. 
 
-# Usage
+# Getting Started
 
-See the demo.
-
+There is no setup needed for using WXNavigationBar. However you can customize WXNavigationBar if needed.
 
 ### Configuration
 
@@ -46,59 +47,88 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
     // ...
     
-    // configure WXNavigationBar
+    // Customize WXNavigationBar if needed (Optional)
     WXNavigationBar.NavBar.backImage = UIImage(named: "xxx")
-    WXNavigationBar.NavBar.isShadowImageHidden = false
 }
 
 ```
 
-Customize Navigation Bar
+Options:
 
+```swift
+/// Back Image for Navigation Bar
+public static var backImage: UIImage? = Utility.image(named: "wx_nav_back")
+        
+/// Background Image for NavigationBar
+public static var backgroundImage: UIImage? = nil
 
-Scenario 1
+/// Background color for NavigationBar
+public static var backgroundColor: UIColor = UIColor(white: 237.0/255, alpha: 1.0)
+
+/// Tint Color for NavigationBar
+public static var tintColor = UIColor(white: 24.0/255, alpha: 1.0)
+
+/// Shadow Image for NavigationBar
+public static var shadowImage: UIImage? = UIImage()
+
+/// Enable fullscreen pop gesture
+public static var fullscreenPopGestureEnabled = false
+```
+
+### ViewController based configuration
+
+Background Color
 ---
 
-Push to solid colored navigation bar
-
-See `PaymentViewController` in the demo.
-
 ```swift
+/// Background color of fake NavigationBar
+/// Default color is UIColor(white: 237.0/255, alpha: 1.0)
 override var wx_navigationBarBackgroundColor: UIColor? {
-    return UIColor(red: 67.0/255, green: 144.0/255, blue: 87.0/255, alpha: 1.0)
+    return .white
 }
 ```
 
-
-Scenario 2
---
-
-Push to transparent navigation bar
-
-![](Assets/navigationbar02.gif)
-
-See `MomentViewController` in the demo.
+Background Image
+---
 
 ```swift
-
-override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    // make the navigation bar transparent
-    wc_navigationBar.alpha = 0
+override var wx_navigationBarBackgroundImage: UIImage? {
+    return UIImage(named: "icons_navigation_bar")
 }
-
 ```
 
-Scenario 3
---
-
-Push to system navigation bar
-
-See `ChatRoomViewController` in the demo.
+System blur navigation bar
+---
 
 ```swift
 override var wx_useSystemBlurNavBar: Bool {
     return true
+}
+```
+
+NavigationBar bar tint color
+---
+
+```swift
+override var wx_barBarTintColor: UIColor? {
+    return .red
+}
+```
+
+NavigationBar tint color
+---
+
+```swift
+override var wx_barTintColor: UIColor? {
+    return .black
+}
+```
+
+Shadow Image
+---
+
+```swift
+override var wx_shadowImage: UIImage? {
+    return UIImage(named: "icons_navigation_bar_shadow_line")
 }
 ```
