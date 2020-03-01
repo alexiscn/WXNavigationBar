@@ -1,3 +1,25 @@
+* [WXNavigationBar](#wxnavigationbar)
+* [Features](#features)
+* [Requirements](#requirements)
+* [Installation](#installation)
+* [Design Principle](#design-principle)
+* [Getting Started](#getting-started)
+    * [Configuration](#configuration)
+    * [ViewController based configuration](#viewcontroller-based-configuration)
+        * [Background Color](#background-color)
+        * [Background Image](#background-image)
+        * [System blur navigation bar](#system-blur-navigation-bar)
+        * [NavigationBar bar tint color](#navigationbar-bar-tint-color)
+        * [NavigationBar tint color](#navigationbar-tint-color)
+        * [Shadow Image](#shadow-image)
+        * [Back Button Image](#back-button-image)
+        * [fullscreen interactive pop gesture](#fullscreen-interactive-pop-gesture)
+        * [interactivePopMaxAllowedInitialDistanceToLeftEdge](#interactivepopmaxallowedinitialdistancetoleftedge)
+* [Advance usage](#advance-usage)
+    * [Transparent Navigation Bar](#transparent-navigation-bar)
+        * [wx_navigationBar.alpha = 0](#wx_navigationbaralpha--0)
+    * [Dynamic update navigation bar](#dynamic-update-navigation-bar)
+
 # WXNavigationBar
 WeChat NavigationBar
 
@@ -77,7 +99,7 @@ public static var fullscreenPopGestureEnabled = false
 
 ## ViewController based configuration
 
-#### Background Color
+### Background Color
 
 ```swift
 /// Background color of fake NavigationBar
@@ -87,7 +109,7 @@ override var wx_navigationBarBackgroundColor: UIColor? {
 }
 ```
 
-#### Background Image
+### Background Image
 
 ```swift
 override var wx_navigationBarBackgroundImage: UIImage? {
@@ -95,7 +117,7 @@ override var wx_navigationBarBackgroundImage: UIImage? {
 }
 ```
 
-#### System blur navigation bar
+### System blur navigation bar
 
 ```swift
 override var wx_useSystemBlurNavBar: Bool {
@@ -103,7 +125,7 @@ override var wx_useSystemBlurNavBar: Bool {
 }
 ```
 
-#### NavigationBar bar tint color
+### NavigationBar bar tint color
 
 ```swift
 override var wx_barBarTintColor: UIColor? {
@@ -111,7 +133,7 @@ override var wx_barBarTintColor: UIColor? {
 }
 ```
 
-#### NavigationBar tint color
+### NavigationBar tint color
 
 ```swift
 override var wx_barTintColor: UIColor? {
@@ -119,10 +141,47 @@ override var wx_barTintColor: UIColor? {
 }
 ```
 
-#### Shadow Image
+### Shadow Image
 
 ```swift
 override var wx_shadowImage: UIImage? {
     return UIImage(named: "icons_navigation_bar_shadow_line")
 }
 ```
+
+### Back Button Image
+
+You can specify navigation bar back image for specific view controller:
+
+```swift
+override var wx_backImage: UIImage? {
+    return UIImage(named: "icons_view_controller_back_image")
+}
+```
+
+### fullscreen interactive pop gesture
+
+```swift
+override var wx_interactivePopEnabled: Bool {
+    return false
+}
+```
+
+### interactivePopMaxAllowedInitialDistanceToLeftEdge
+
+```swift
+override wx_interactivePopMaxAllowedInitialDistanceToLeftEdge: CGFloat {
+    return view.bounds.width * 0.5
+}
+```
+
+# Advance usage
+
+## Transparent Navigation Bar
+
+### wx_navigationBar.alpha = 0
+
+
+## Dynamic update navigation bar
+
+You can dynamic update

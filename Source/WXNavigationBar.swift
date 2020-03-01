@@ -28,6 +28,7 @@ public class WXNavigationBar: UIView {
         /// Shadow Image for NavigationBar
         public static var shadowImage: UIImage? = UIImage()
         
+        /// Enable fullscreen pop gesture
         public static var fullscreenPopGestureEnabled = false
     }
     
