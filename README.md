@@ -13,15 +13,15 @@ WeChat NavigationBar
 * [Getting Started](#getting-started)
     * [UINavigationController based configuration](#uinavigationcontroller-based-configuration)
     * [ViewController based configuration](#viewcontroller-based-configuration)
-    * [Background Color](#background-color)
-    * [Background Image](#background-image)
-    * [System blur navigation bar](#system-blur-navigation-bar)
-    * [NavigationBar bar tint color](#navigationbar-bar-tint-color)
-    * [NavigationBar tint color](#navigationbar-tint-color)
-    * [Shadow Image](#shadow-image)
-    * [Back Button Image](#back-button-image)
-    * [fullscreen interactive pop gesture](#fullscreen-interactive-pop-gesture)
-    * [interactivePopMaxAllowedInitialDistanceToLeftEdge](#interactivepopmaxallowedinitialdistancetoleftedge)
+      * [Background Color](#background-color)
+      * [Background Image](#background-image)
+      * [System blur navigation bar](#system-blur-navigation-bar)
+      * [NavigationBar bar tint color](#navigationbar-bar-tint-color)
+      * [NavigationBar tint color](#navigationbar-tint-color)
+      * [Shadow Image](#shadow-image)
+      * [Back Button Image](#back-button-image)
+      * [fullscreen interactive pop gesture](#fullscreen-interactive-pop-gesture)
+      * [interactivePopMaxAllowedInitialDistanceToLeftEdge](#interactivepopmaxallowedinitialdistancetoleftedge)
 * [Advance usage](#advance-usage)
     * [Transparent Navigation Bar](#transparent-navigation-bar)
       * [alpha](#alpha)
@@ -35,7 +35,8 @@ WeChat NavigationBar
 
 - [x] Support transparent navigationbar
 - [x] Support navigationbar background image
-- [x] Support navigationbar large title
+- [x] Support navigationbar large title mode
+- [x] Support iOS 13 dark mode
 - [x] Support fullscreen pop gesture
 - [x] As Simple as using UINavigationBar 
  
@@ -57,7 +58,12 @@ pod 'WXNavigationBar'
 
 ## Design Principle
 
-`WXNavigation` make the actual UINavigationBar transparent and add a view as a fake navigation bar. 
+`WXNavigation` make the actual UINavigationBar transparent and add a view as a fake navigation bar to the view controller. 
+
+The actual navigation bar still handles the touch events, the fake navigation bar do the display staffs, eg: backgroundColor, backgroundImage.
+
+So you use navigation bar as usual. when you want to handle the display things, you use `WXNavigationBar`
+
 
 ## Getting Started
 
