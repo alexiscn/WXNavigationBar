@@ -3,38 +3,71 @@ WeChat NavigationBar
 
 ![](Assets/navigationbar01.gif)
 
+* [Features](#features)
+* [Requirements](#requirements)
+* [安装](#安装)
+* [实现原理](#实现原理)
+* [开始使用](#开始使用)
+   * [基于 UINavigationController 的配置](#基于-uinavigationcontroller-的配置)
+   * [基于 UIViewController 的配置](#基于-uiviewcontroller-的配置)
+      * [背景颜色](#背景颜色)
+      * [背景图片](#背景图片)
+      * [系统样式的导航栏](#系统样式的导航栏)
+      * [导航栏 barTintColor](#导航栏-bartintcolor)
+      * [导航栏 tintColor](#导航栏-tintcolor)
+      * [导航栏阴影图片](#导航栏阴影图片)
+      * [导航栏返回按钮图片](#导航栏返回按钮图片)
+      * [启用全屏返回手势](#启用全屏返回手势)
+      * [全屏手势返回距离](#全屏手势返回距离)
+* [高级用法](#高级用法)
+   * [导航栏透明](#导航栏透明)
+      * [设置透明度](#设置透明度)
+      * [设置隐藏](#设置隐藏)
+      * [设置背景颜色](#设置背景颜色)
+   * [动态更新导航栏样式](#动态更新导航栏样式)
+   * [wx_navigationBar](#wx_navigationbar)
+* [License](#license)
 
 
-# 特点
+## Features
 
-- 支持设置导航栏背景颜色
-- 支持设置导航栏背景图片
-- 支持Large Title模式
-- 支持全屏手势返回
-- 支持隐藏导航栏底部黑线
+- [x] 支持设置导航栏背景颜色
+- [x] 支持设置导航栏背景图片
+- [X] 支持Large Title模式
+- [x] 支持iOS 13 暗黑模式
+- [x] 支持全屏手势返回
+- [x] 同使用UINavigationBar一样简单
 
 
-# Requirements
+## Requirements
 
 - iOS 12.0+
 - Xcode 11.0+
 - Swift 5.0+
 
-# 安装
+## 安装
 
 `WXNavigationBar` 可以通过CocoaPods安装，在`Podfile`中添加
 
-```
+```bash
+use_frameworks!
 pod 'WXNavigationBar'
 ```
 
+## 实现原理
 
-# 实现原理
+`WXNavigationBar`通过将系统导航栏设为透明，在View中添加一个NavigationBar相同大小，相同位置的View作为假的导航栏。
 
-将系统导航栏设为透明，在View中添加一个NavigationBar相同大小，相同位置的View作为导航栏的背景视图。
+原始的UINavigationBar还是用于处理手势相关逻辑，WXNavigationBar用于展示部分，比如背景颜色、背景图片等。
+
+所以你可以像平常使用UINavigationBar一样，当你需要处理导航栏显示的时候，使用WXNavigationBar。
 
 
-# 使用方法
+## 开始使用
+
+使用WXNavigationBar不需要特殊的初始化配置，默认的就如同微信中的导航栏一样。当你需要配置时，有两种方式可以配置。使用`UINavigationController.Nav`中的属性对`UINavigationController`进行配置，或者重写`UIViewController`中的相关属性对`UIViewController`进行配置。
+
+### 基于 UINavigationController 的配置
 
 在`AppDelegate.swift`中全局配置，可选
 
@@ -47,79 +80,62 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     // ...
     
     // configure WXNavigationBar
-    WXNavigationBar.NavBar.backImage = UIImage(named: "xxx")
-    WXNavigationBar.NavBar.isShadowImageHidden = false
+    // WXNavigationBar.NavBar.backImage = UIImage(named: "xxx")    
 }
 
 ```
 
-
-### 自定义返回按钮
-
-
-1、全局修改返回按钮图片
+有如下的这些配置选项：
 
 ```swift
-import WXNavigationBar
+/// 导航栏返回按钮
+public static var backImage: UIImage? = Utility.image(named: "wx_nav_back")
+        
+/// 导航栏背景图片
+public static var backgroundImage: UIImage? = nil
 
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+/// 导航栏背景颜色
+public static var backgroundColor: UIColor = UIColor(white: 237.0/255, alpha: 1.0)
 
-	// ...
-	WXNavigationBar.NavBar.backImage = UIImage("my_back_button_image")
+/// 导航栏的tintColor
+public static var tintColor = UIColor(white: 24.0/255, alpha: 1.0)
 
-}
+/// 导航栏底部阴影图片
+public static var shadowImage: UIImage? = UIImage()
 
+/// 是否启用全屏左滑手势
+public static var fullscreenPopGestureEnabled = false
 ```
 
+### 基于 UIViewController 的配置
 
-2、修改特定ViewController中的返回按钮图片
+你也可以通过重写 `WXNavigationBar`支持的属性对制定的ViewController进行配置。
 
-```swift
-// ViewController.swift
-import WXNavigationBar
+#### 背景颜色
 
-class ViewController: UIViewController {
-	
-
-	// ....
-
-	override var wx_backImage: UIImage? {
-		return UIImage("my_back_button_image")
-	}
-
-}
-
-```
-
-
-### 导航栏透明
-
-
-有两种方法可以让导航栏透明，将WXNavigationBar的背景颜色设为透明或者将其alpha 设为 0
+你可以通过如下属性设置导航栏的背景颜色
 
 ```swift
-
-override func viewDidLoad() {
-	super.viewDidLoad()
-	
-	wx_navigationBar.alpha = 0	
-
-	// wx_navigationBar.isHidden = true
-}
-
-```
-
-或者
-
-```swift
+/// Background color of fake NavigationBar
+/// Default color is UIColor(white: 237.0/255, alpha: 1.0)
 override var wx_navigationBarBackgroundColor: UIColor? {
-        return .clear
- }
+    return .white
+}
 ```
 
-### 使用系统导航栏
+#### 背景图片
 
-由于`WXNavigationBar`的实现原理，默认是使用纯色的导航栏，如果想要Blur效果的导航栏，可以将 `wx_useSystemBlurNavBar`设为`true`:
+你可以配置导航栏的背景图片：
+
+```swift
+override var wx_navigationBarBackgroundImage: UIImage? {
+    return UIImage(named: "icons_navigation_bar")
+}
+```
+
+#### 系统样式的导航栏
+
+当你需要使用系统样式得导航栏时，可以将 `wx_useSystemBlurNavBar`设为`true`:
 
 ```swift
 override var wx_useSystemBlurNavBar: Bool {
@@ -127,15 +143,96 @@ override var wx_useSystemBlurNavBar: Bool {
 }
 ```
 
-## shadowImage
-
-默认WXNavigationBar会隐藏导航栏下的黑线，如果想要显示shadowImage，可以将 `wx_hiddenShadowImage`设为`false`：
-
+#### 导航栏 barTintColor
 
 ```swift
-override var wx_hiddenShadowImage: Bool {
-    return false
+override var wx_barBarTintColor: UIColor? {
+    return .red
+}
+```
+
+#### 导航栏 tintColor
+
+```swift
+override var wx_barTintColor: UIColor? {
+    return .black
+}
+```
+
+#### 导航栏阴影图片
+
+你可以设置导航栏底部黑线图片，比如是纯色的图片，或是渐变的图片。
+
+```swift
+override var wx_shadowImage: UIImage? {
+    return UIImage(named: "icons_navigation_bar_shadow_line")
 }
 ```
 
 
+#### 导航栏返回按钮图片
+
+你可以给特定的ViewController设置特定的返回按钮图片：
+
+```swift
+override var wx_backImage: UIImage? {
+    return UIImage(named: "icons_view_controller_back_image")
+}
+```
+
+#### 启用全屏返回手势
+
+```swift
+override var wx_interactivePopEnabled: Bool {
+    return false
+}
+```
+
+#### 全屏手势返回距离
+
+```swift
+override wx_interactivePopMaxAllowedInitialDistanceToLeftEdge: CGFloat {
+    return view.bounds.width * 0.5
+}
+```
+
+## 高级用法
+
+这里列出了`WXNavigationBar`的一些高级用法：
+
+### 导航栏透明
+
+有多种方式可以设置导航栏透明：
+
+##### 设置透明度
+
+```swift
+wx_navigationBar.alpha = 0
+```
+
+#### 设置隐藏
+
+```swift
+wx_navigationBar.isHidden = true
+```
+
+#### 设置背景颜色
+
+
+```swift
+override var wx_navigationBarBackgroundColor: UIColor? {
+    return .clear
+}
+```
+
+### 动态更新导航栏样式
+
+参考 `MomentViewController`
+
+### wx_navigationBar
+
+`wx_navigationBar`是`UIView`的子类，所以你可以对其做任何可以对`UIView`的逻辑。比如增加渐变的`GradientLayer`，比如增加导航栏动画等等。
+
+## License
+
+`WXNavigationBar`基于MTI协议。[LICENSE](LICENSE)

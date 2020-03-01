@@ -29,6 +29,8 @@ WeChat NavigationBar
      * [background color](#background-color-1)
    * [Dynamic update navigation bar](#dynamic-update-navigation-bar)
    * [wx_navigationBar](#wx_navigationbar)
+* [License](#license)
+* [中文文档](#中文文档)
 
 <!-- Toc End -->
 
@@ -51,7 +53,7 @@ WeChat NavigationBar
 
 `WXNavigationBar` is available through CocoaPods. To install it, simply add the following line to your Podfile:
 
-```
+```bash
 use_frameworks!
 
 pod 'WXNavigationBar'
@@ -239,3 +241,12 @@ See `MomentViewController` for details.
 ### wx_navigationBar
 
 `wx_navigationBar` is a subclass of UIView, so you can do anything to `wx_navigationBar` that can be done with UIView.
+
+## License
+
+WXNavigationBar is MIT-licensed. [LICENSE](LICENSE)
+
+
+## 中文文档
+
+你可以参考[中文文档](README_CN.md)
