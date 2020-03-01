@@ -35,7 +35,7 @@ pod 'WXNavigationBar'
 
 There is no setup needed for using WXNavigationBar. However you can customize WXNavigationBar if needed.
 
-### Configuration
+## Configuration
 
 In your `AppDelegate.swift`
 
@@ -75,10 +75,9 @@ public static var shadowImage: UIImage? = UIImage()
 public static var fullscreenPopGestureEnabled = false
 ```
 
-### ViewController based configuration
+## ViewController based configuration
 
-Background Color
----
+#### Background Color
 
 ```swift
 /// Background color of fake NavigationBar
@@ -88,8 +87,7 @@ override var wx_navigationBarBackgroundColor: UIColor? {
 }
 ```
 
-Background Image
----
+#### Background Image
 
 ```swift
 override var wx_navigationBarBackgroundImage: UIImage? {
@@ -97,8 +95,7 @@ override var wx_navigationBarBackgroundImage: UIImage? {
 }
 ```
 
-System blur navigation bar
----
+#### System blur navigation bar
 
 ```swift
 override var wx_useSystemBlurNavBar: Bool {
@@ -106,8 +103,7 @@ override var wx_useSystemBlurNavBar: Bool {
 }
 ```
 
-NavigationBar bar tint color
----
+#### NavigationBar bar tint color
 
 ```swift
 override var wx_barBarTintColor: UIColor? {
@@ -115,8 +111,7 @@ override var wx_barBarTintColor: UIColor? {
 }
 ```
 
-NavigationBar tint color
----
+#### NavigationBar tint color
 
 ```swift
 override var wx_barTintColor: UIColor? {
@@ -124,8 +119,7 @@ override var wx_barTintColor: UIColor? {
 }
 ```
 
-Shadow Image
----
+#### Shadow Image
 
 ```swift
 override var wx_shadowImage: UIImage? {
