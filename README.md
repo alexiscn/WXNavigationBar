@@ -69,7 +69,7 @@ pod 'WXNavigationBar'
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate WXNavigationBar into your Xcode project using Carthage, specify it in your Cartfile:
 
 ```bash
-git alexiscn/WXNavigationBar
+github alexiscn/WXNavigationBar
 ```
 
 ### Swift Package Manager
@@ -120,7 +120,7 @@ You can configure following options:
 
 ```swift
 /// Back Image for Navigation Bar
-public static var backImage: UIImage? = Utility.image(named: "wx_nav_back")
+public static var backImage: UIImage? = Utility.backImage
         
 /// Background Image for NavigationBar
 public static var backgroundImage: UIImage? = nil

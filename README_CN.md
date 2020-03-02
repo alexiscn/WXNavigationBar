@@ -61,8 +61,10 @@ pod 'WXNavigationBar'
 
 ### Carthage
 
+`WXNavigationBar` 也可以通过[Carthage](https://github.com/Carthage/Carthage)进行安装，你可以添加如下代码到 Cartfile中：
+
 ```bash
-git alexiscn/WXNavigationBar
+github alexiscn/WXNavigationBar
 ```
 
 ### Swift Package Manager
@@ -109,7 +111,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ```swift
 /// 导航栏返回按钮
-public static var backImage: UIImage? = Utility.image(named: "wx_nav_back")
+public static var backImage: UIImage? = Utility.backImage
         
 /// 导航栏背景图片
 public static var backgroundImage: UIImage? = nil
