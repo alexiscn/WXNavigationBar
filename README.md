@@ -32,6 +32,8 @@ WeChat NavigationBar
      * [background color](#background-color-1)
    * [Dynamic update navigation bar](#dynamic-update-navigation-bar)
    * [wx_navigationBar](#wx_navigationbar)
+* [Notes](#notes)
+   * [Child View Controller](#child_view_controller)
 * [License](#license)
 * [中文文档](#中文文档)
 
@@ -267,6 +269,20 @@ See `MomentViewController` for details.
 ### wx_navigationBar
 
 `wx_navigationBar` is a subclass of UIView, so you can do anything to `wx_navigationBar` that can be done with UIView.
+
+
+## Notes
+
+### Child View Controller
+
+`wx_navigationBar` can be overlaid when you dynamically add child view controller. So it's your responsibility to bring `wx_navigationBar` to front.
+
+```swift
+
+// addChild(controller) or addSubview
+
+view.bringSubviewToFront(wx_navigationBar)
+```
 
 ## License
 

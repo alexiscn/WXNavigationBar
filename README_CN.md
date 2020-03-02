@@ -29,6 +29,8 @@ WeChat NavigationBar
       * [设置背景颜色](#设置背景颜色)
    * [动态更新导航栏样式](#动态更新导航栏样式)
    * [wx_navigationBar](#wx_navigationbar)
+* [注意点](#注意点)
+   * [Child View Controller](#child_view_controller)
 * [License](#license)
 
 
@@ -254,6 +256,17 @@ override var wx_navigationBarBackgroundColor: UIColor? {
 ### wx_navigationBar
 
 `wx_navigationBar`是`UIView`的子类，所以你可以对其做任何可以对`UIView`的逻辑。比如增加渐变的`GradientLayer`，比如增加导航栏动画等等。
+
+## 注意点
+
+### Child View Controller
+
+当动态添加Child View Controller时，`wx_navigationBar` 可能被遮盖，所以你你需要手动将其移到最前面
+
+```swift
+// addChild(controller) or addSubview
+view.bringSubviewToFront(wx_navigationBar)
+```
 
 ## License
 
