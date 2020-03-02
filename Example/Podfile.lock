@@ -1,0 +1,25 @@
+PODS:
+  - Kingfisher (5.13.2):
+    - Kingfisher/Core (= 5.13.2)
+  - Kingfisher/Core (5.13.2)
+  - WXNavigationBar (1.8.0)
+
+DEPENDENCIES:
+  - Kingfisher
+  - WXNavigationBar (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Kingfisher
+
+EXTERNAL SOURCES:
+  WXNavigationBar:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Kingfisher: d342c8354c10c3d85a27d6d4c42c41285924b898
+  WXNavigationBar: 6019612592f4d7e633f16cce2ba8e2547748138c
+
+PODFILE CHECKSUM: 7a03f14fc21191088ccb20710a3af2a1955c0590
+
+COCOAPODS: 1.9.0

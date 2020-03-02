@@ -6,6 +6,9 @@ WeChat NavigationBar
 * [Features](#features)
 * [Requirements](#requirements)
 * [安装](#安装)
+   * [CocoaPods](#cocoapods)
+   * [Carthage](#carthage)
+   * [Swift Package Manager](#swift-package-manager)
 * [实现原理](#实现原理)
 * [开始使用](#开始使用)
    * [基于 UINavigationController 的配置](#基于-uinavigationcontroller-的配置)
@@ -47,12 +50,29 @@ WeChat NavigationBar
 
 ## 安装
 
+### CocoaPods
+
 `WXNavigationBar` 可以通过CocoaPods安装，在`Podfile`中添加
 
 ```bash
 use_frameworks!
 pod 'WXNavigationBar'
 ```
+
+### Carthage
+
+```bash
+git alexiscn/WXNavigationBar
+```
+
+### Swift Package Manager
+
+```
+dependencies: [
+    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.8.0"))
+]
+```
+
 
 ## 实现原理
 

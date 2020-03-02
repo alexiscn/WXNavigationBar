@@ -9,6 +9,9 @@ WeChat NavigationBar
 * [Features](#features)
 * [Requirements](#requirements)
 * [Installation](#installation)
+    * [CocoaPods](#cocoapods)
+    * [Carthage](#carthage)
+    * [Swift Package Manager](#swift-package-manager)
 * [Design Principle](#design-principle)
 * [Getting Started](#getting-started)
    * [UINavigationController based configuration](#uinavigationcontroller-based-configuration)
@@ -51,6 +54,8 @@ WeChat NavigationBar
 
 ## Installation
 
+### CocoaPods
+
 `WXNavigationBar` is available through CocoaPods. To install it, simply add the following line to your Podfile:
 
 ```bash
@@ -58,6 +63,27 @@ use_frameworks!
 
 pod 'WXNavigationBar'
 ```
+
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate WXNavigationBar into your Xcode project using Carthage, specify it in your Cartfile:
+
+```bash
+git alexiscn/WXNavigationBar
+```
+
+### Swift Package Manager
+
+[The Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the swift compiler. It is in early development, but WXNavigationBar does support its use on supported platforms.
+
+Once you have your Swift package set up, adding WXNavigationBar as a dependency is as easy as adding it to the dependencies value of your Package.swift.
+
+```
+dependencies: [
+    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.8.0"))
+]
+```
+
 
 ## Design Principle
 
