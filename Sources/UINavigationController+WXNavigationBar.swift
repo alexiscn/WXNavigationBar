@@ -119,7 +119,6 @@ extension UINavigationController {
     static let wx_navswizzle: Void = {
         let cls = UINavigationController.self
         swizzleMethod(cls, #selector(UINavigationController.pushViewController(_:animated:)), #selector(UINavigationController.wx_pushViewController(_:animated:)))
-        //swizzleMethod(cls, #selector(UINavigationController.popViewController(animated:)), <#T##newSelector: Selector##Selector#>)
     }()
     
     func configureNavigationBar() {

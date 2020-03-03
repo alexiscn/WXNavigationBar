@@ -23,7 +23,6 @@ class MomentsViewController: UIViewController {
     private let navBarHeight: CGFloat = 44.0
     private let headerHeight: CGFloat = 307.0
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

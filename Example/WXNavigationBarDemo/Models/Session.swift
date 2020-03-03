@@ -8,21 +8,27 @@
 
 import Foundation
 
-struct Session: Codable {
+enum Session: CaseIterable {
     
-    enum CodingKeys: String, CodingKey {
-        case identifier = "id"
-        case username
-        case gender
-        case avatar
+    case transparent
+    case backgroundColor
+    case backgroundImage
+    case shadowImage
+    case customBackButtonImage
+    
+    var title: String {
+        switch self {
+        case .transparent:
+            return "Transparent NavigationBar"
+        case .backgroundColor:
+            return "NavigationBar Background Color"
+        case .backgroundImage:
+            return "NavigationBar Background Image"
+        case .shadowImage:
+            return "Shadow Image"
+        case .customBackButtonImage:
+            return "Customize Back Button Image"
+        }
     }
-    
-    var identifier: Int
-    
-    var username: String
-    
-    var gender: String
-    
-    var avatar: URL?
     
 }
