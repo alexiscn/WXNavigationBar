@@ -15,7 +15,8 @@ struct Constants {
     }
     
     static var keyWindowSafeAreaInsets: UIEdgeInsets {
-        return UIApplication.shared.keyWindow?.safeAreaInsets ?? .zero
+        let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow })
+        return keyWindow?.safeAreaInsets ?? .zero
     }
     
     static var statusBarHeight: CGFloat {

@@ -32,11 +32,12 @@
 		A3F89C3C240E6BF200202710 /* ChatRoomViewController_CustomBackButtonImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F89C3B240E6BF200202710 /* ChatRoomViewController_CustomBackButtonImage.swift */; };
 		A3F89C3F240E6CCB00202710 /* ChatRoomViewController_Transparent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F89C3E240E6CCB00202710 /* ChatRoomViewController_Transparent.swift */; };
 		A3F89C41240E6D1F00202710 /* ChatRoomViewController_ShadowImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F89C40240E6D1F00202710 /* ChatRoomViewController_ShadowImage.swift */; };
+		A3F89C45240FBF1E00202710 /* MeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F89C44240FBF1E00202710 /* MeItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		682E82EB4398F6A4052C3736 /* Pods_WXNavigationBarDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WXNavigationBarDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A369A5592402AB14009A1396 /* WXNavigationBarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WXNavigationBarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A369A5592402AB14009A1396 /* NavigationBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A369A55C2402AB14009A1396 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A369A5602402AB14009A1396 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A369A5632402AB14009A1396 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 		A3F89C3B240E6BF200202710 /* ChatRoomViewController_CustomBackButtonImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController_CustomBackButtonImage.swift; sourceTree = "<group>"; };
 		A3F89C3E240E6CCB00202710 /* ChatRoomViewController_Transparent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController_Transparent.swift; sourceTree = "<group>"; };
 		A3F89C40240E6D1F00202710 /* ChatRoomViewController_ShadowImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController_ShadowImage.swift; sourceTree = "<group>"; };
+		A3F89C44240FBF1E00202710 /* MeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeItem.swift; sourceTree = "<group>"; };
 		DAE969A7AAF992E857E3CE7B /* Pods-WXNavigationBarDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WXNavigationBarDemo.debug.xcconfig"; path = "Target Support Files/Pods-WXNavigationBarDemo/Pods-WXNavigationBarDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		F95D4246861D0B22A0F960D9 /* Pods-WXNavigationBarDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WXNavigationBarDemo.release.xcconfig"; path = "Target Support Files/Pods-WXNavigationBarDemo/Pods-WXNavigationBarDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,7 +101,7 @@
 		A369A55A2402AB14009A1396 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A369A5592402AB14009A1396 /* WXNavigationBarDemo.app */,
+				A369A5592402AB14009A1396 /* NavigationBar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,6 +151,7 @@
 				A369A5872402BB35009A1396 /* Session.swift */,
 				A369A5952403761C009A1396 /* SessionMoreItem.swift */,
 				A369A59E240399A8009A1396 /* Discover.swift */,
+				A3F89C44240FBF1E00202710 /* MeItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -213,7 +216,7 @@
 			);
 			name = WXNavigationBarDemo;
 			productName = WXNavigationBarDemo;
-			productReference = A369A5592402AB14009A1396 /* WXNavigationBarDemo.app */;
+			productReference = A369A5592402AB14009A1396 /* NavigationBar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -334,6 +337,7 @@
 				A369A5822402B035009A1396 /* RootViewController.swift in Sources */,
 				A3F89C3C240E6BF200202710 /* ChatRoomViewController_CustomBackButtonImage.swift in Sources */,
 				A369A5AB240696A5009A1396 /* MomentHeaderView.swift in Sources */,
+				A3F89C45240FBF1E00202710 /* MeItem.swift in Sources */,
 				A3F89C3F240E6CCB00202710 /* ChatRoomViewController_Transparent.swift in Sources */,
 				A369A59B24037BA5009A1396 /* PaymentViewController.swift in Sources */,
 				A369A59D24039993009A1396 /* MomentsViewController.swift in Sources */,
@@ -500,7 +504,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.shuifeng.WXNavigationBarDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NavigationBar;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -520,7 +524,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.shuifeng.WXNavigationBarDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NavigationBar;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

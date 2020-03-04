@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import WXNavigationBar
 
 class PaymentViewController: UIViewController {
 
