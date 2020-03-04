@@ -25,7 +25,6 @@ class SessionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor(white: 237.0/255, alpha: 1.0)
         setupNavigationBar()
         setupTableView()
     }
@@ -37,7 +36,6 @@ class SessionViewController: UIViewController {
     
     private func setupTableView() {
         tableView = UITableView(frame: view.bounds)
-        tableView.backgroundColor = .clear
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.dataSource = self
         tableView.delegate = self
@@ -63,6 +61,10 @@ class SessionViewController: UIViewController {
         menuFloatView.hide(animated: animated)
     }
     
+    // MARK: - WXNavigationBar
+    override var wx_navigationBarBackgroundColor: UIColor? {
+        return .systemGreen
+    }
 }
 
 // MARK: - UITableViewDataSource

@@ -21,7 +21,6 @@ class DiscoverViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor(white: 237.0/255, alpha: 1.0)
         setupDataSource()
         setupTableView()
     }
@@ -37,12 +36,15 @@ class DiscoverViewController: UIViewController {
     
     private func setupTableView() {
         tableView = UITableView(frame: view.bounds, style: .grouped)
-        tableView.backgroundColor = .clear
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
         view.addSubview(tableView)
+    }
+    
+    override var wx_navigationBarBackgroundColor: UIColor? {
+        return .systemPink
     }
 }
 

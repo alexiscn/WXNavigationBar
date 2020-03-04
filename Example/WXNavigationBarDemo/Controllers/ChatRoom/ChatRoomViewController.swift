@@ -35,13 +35,13 @@ class ChatRoomViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor(white: 237.0/255, alpha: 1.0)
+        //view.backgroundColor = UIColor(white: 237.0/255, alpha: 1.0)
         setupTableView()
     }
     
     private func setupTableView() {
         tableView = UITableView(frame: view.bounds)
-        tableView.backgroundColor = .clear
+        //tableView.backgroundColor = .clear
         tableView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         tableView.tableFooterView = UIView()
         tableView.dataSource = self

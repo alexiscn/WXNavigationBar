@@ -11,7 +11,7 @@ import UIKit
 class ChatRoomViewController_BackgroundColor: ChatRoomViewController {
     
     override var wx_navigationBarBackgroundColor: UIColor? {
-        return .systemGreen
+        return .systemRed
     }
     
     override var wx_barTintColor: UIColor? {
