@@ -1,5 +1,5 @@
 
-![](Assets/WXNavigationBar_Logo.png)
+![](Assets/WXNavigationBar_Logo@2x.png)
 
 # WXNavigationBar
 WeChat NavigationBar
