@@ -234,7 +234,7 @@ override wx_interactivePopMaxAllowedInitialDistanceToLeftEdge: CGFloat {
 
 ## Advance usage
 
-Here is some adavnce usage suggestions for `WXNavigationBar`.
+Here is some advance usage suggestions for `WXNavigationBar`.
 
 ### Transparent Navigation Bar
 
@@ -252,6 +252,7 @@ wx_navigationBar.alpha = 0
 wx_navigationBar.isHidden = true
 ```
 
+
 ##### background color
 
 ```swift
@@ -260,15 +261,19 @@ override var wx_navigationBarBackgroundColor: UIColor? {
 }
 ```
 
+alpha and hidden make wx_navigationBar invisible, while backgroundColor just change the color of 
+wx_navigationBar
+
+
 ### Dynamic update navigation bar
 
-You can dynamic update navigation bar, such as dynamic update through scrolling.
+You can dynamically update navigation bar, such as dynamically update while scrolling.
 
 See `MomentViewController` for details.
 
 ### wx_navigationBar
 
-`wx_navigationBar` is a subclass of UIView, so you can do anything to `wx_navigationBar` that can be done with UIView.
+`wx_navigationBar` is a subclass of UIView, so you can do anything with `wx_navigationBar` that can be done with UIView.
 
 
 ## Notes
