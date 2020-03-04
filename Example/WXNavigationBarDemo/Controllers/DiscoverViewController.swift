@@ -42,10 +42,6 @@ class DiscoverViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
         view.addSubview(tableView)
     }
-    
-    override var wx_navigationBarBackgroundColor: UIColor? {
-        return .systemPink
-    }
 }
 
 // MARK: - UITableViewDataSource

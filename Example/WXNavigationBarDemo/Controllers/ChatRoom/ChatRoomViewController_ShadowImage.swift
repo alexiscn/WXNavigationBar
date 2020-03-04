@@ -14,4 +14,8 @@ class ChatRoomViewController_ShadowImage: ChatRoomViewController {
         return UIImage(named: "icon_shadow")
     }
     
+    override var wx_navigationBarBackgroundColor: UIColor? {
+        return .secondarySystemBackground
+    }
+    
 }

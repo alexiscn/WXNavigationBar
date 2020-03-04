@@ -90,7 +90,14 @@ class MomentsViewController: UIViewController {
         return statusBarStyle
     }
     
-    override var wx_barTintColor: UIColor? { return barTintColor }
+    // MARK: - WXNavigationBar
+    override var wx_barTintColor: UIColor? {
+        return barTintColor
+    }
+    
+    override var wx_navigationBarBackgroundColor: UIColor? {
+        return .secondarySystemBackground
+    }
 }
 
 // MARK: - UITableViewDataSources

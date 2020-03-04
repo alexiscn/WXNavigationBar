@@ -1,7 +1,7 @@
 # WXNavigationBar
 WeChat NavigationBar
 
-![](Assets/navigationbar01.gif)
+![](Assets/Preview.gif)
 
 * [Features](#features)
 * [Requirements](#requirements)

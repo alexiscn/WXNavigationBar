@@ -63,7 +63,7 @@ class SessionViewController: UIViewController {
     
     // MARK: - WXNavigationBar
     override var wx_navigationBarBackgroundColor: UIColor? {
-        return .systemGreen
+        return .secondarySystemBackground
     }
 }
 
