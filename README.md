@@ -24,6 +24,7 @@ WeChat NavigationBar
       * [NavigationBar bar tint color](#navigationbar-bar-tint-color)
       * [NavigationBar tint color](#navigationbar-tint-color)
       * [Shadow Image](#shadow-image)
+      * [Shadow Image Tint Color](#shadow-image-tint-color)
       * [Back Button Image](#back-button-image)
       * [fullscreen interactive pop gesture](#fullscreen-interactive-pop-gesture)
       * [interactivePopMaxAllowedInitialDistanceToLeftEdge](#interactivepopmaxallowedinitialdistancetoleftedge)
@@ -205,6 +206,16 @@ You can specify navigation bar shadow image for specific view controller(eg: sol
 ```swift
 override var wx_shadowImage: UIImage? {
     return UIImage(named: "icons_navigation_bar_shadow_line")
+}
+```
+
+#### Shadow Image Tint Color
+
+You can create shadow image from color, this property will overwrite `wx_shadowImage`
+
+```swift
+override var wx_shadowImageTintColor: UIColor? {
+    return .red
 }
 ```
 

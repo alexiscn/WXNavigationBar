@@ -21,6 +21,7 @@ WeChat NavigationBar
       * [导航栏 barTintColor](#导航栏-bartintcolor)
       * [导航栏 tintColor](#导航栏-tintcolor)
       * [导航栏阴影图片](#导航栏阴影图片)
+      * [导航栏阴影颜色](#导航栏阴影颜色)
       * [导航栏返回按钮图片](#导航栏返回按钮图片)
       * [启用全屏返回手势](#启用全屏返回手势)
       * [全屏手势返回距离](#全屏手势返回距离)
@@ -195,6 +196,15 @@ override var wx_shadowImage: UIImage? {
 }
 ```
 
+#### 导航栏阴影图片
+
+为了方便起见，可以使用`wx_shadowImageTintColor`来指定导航栏底部黑线的颜色，如果使用了`wx_shadowImageTintColor`，则`wx_shadowImage`会被忽略。
+
+```swift
+override var wx_shadowImageTintColor: UIColor? {
+    return .red
+}
+```
 
 #### 导航栏返回按钮图片
 

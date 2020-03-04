@@ -20,6 +20,7 @@ extension UIViewController {
         static var titleTextAttributes = "WXNavigationBar_titleTextAttributes"
         static var useSystemBlurNavBar = "WXNavigationBar_useSystemBlurNavBar"
         static var shadowImage = "WXNavigationBar_shadowImage"
+        static var shadowImageTintColor = "WXNavigationBar_shadowImageTintColor"
         static var backImage = "WXNavigationBar_backImage"
         
         static var interactiveEnabled = "WXNavigationBar_interactivePopEnabled"
@@ -132,6 +133,20 @@ extension UIViewController {
                                  .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return shadowImage
     }
+    
+    /// Use `wx_shadowImageTintColor` to create shadowImage. The default value is nil.
+    /// Note: if `wx_shadowImageTintColor` is set, `wx_shadowImage` will be ignored.
+    @objc open var wx_shadowImageTintColor: UIColor? {
+        if let shadowImageTintColor = objc_getAssociatedObject(self, &AssociatedKeys.shadowImageTintColor) as? UIColor {
+            return shadowImageTintColor
+        }
+        let shadowImageTintColor: UIColor? = nil
+        objc_setAssociatedObject(self,
+                                 &AssociatedKeys.shadowImageTintColor,
+                                 shadowImageTintColor,
+                                 .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        return shadowImageTintColor
+    }
 
     /// NavigationBar back image
     @objc open var wx_backImage: UIImage? {
@@ -198,6 +213,9 @@ extension UIViewController {
             // configure fake navigationBar
             wx_navigationBar.backgroundColor = wx_navigationBarBackgroundColor
             wx_navigationBar.shadowImageView.image = wx_shadowImage
+            if let color = wx_shadowImageTintColor {
+                wx_navigationBar.shadowImageView.image = Utility.imageFrom(color: color)
+            }
             wx_navigationBar.backgroundImageView.image = wx_navigationBarBackgroundImage
             wx_navigationBar.frame = CGRect(x: 0,
                                             y: 0,

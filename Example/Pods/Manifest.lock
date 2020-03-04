@@ -1,5 +1,5 @@
 PODS:
-  - WXNavigationBar (1.8.0)
+  - WXNavigationBar (1.8.1)
 
 DEPENDENCIES:
   - WXNavigationBar (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  WXNavigationBar: 6019612592f4d7e633f16cce2ba8e2547748138c
+  WXNavigationBar: 2192e1beb84481e6827db90010c4b2132217ad78
 
 PODFILE CHECKSUM: caf3be77388a6c2d746df00922b4501176d986ca
 

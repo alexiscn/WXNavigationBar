@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A369A5582402AB14009A1396"
-               BuildableName = "WXNavigationBarDemo.app"
+               BuildableName = "NavigationBar.app"
                BlueprintName = "WXNavigationBarDemo"
                ReferencedContainer = "container:WXNavigationBarDemo.xcodeproj">
             </BuildableReference>
@@ -59,7 +59,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A369A5582402AB14009A1396"
-            BuildableName = "WXNavigationBarDemo.app"
+            BuildableName = "NavigationBar.app"
             BlueprintName = "WXNavigationBarDemo"
             ReferencedContainer = "container:WXNavigationBarDemo.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A369A5582402AB14009A1396"
-            BuildableName = "WXNavigationBarDemo.app"
+            BuildableName = "NavigationBar.app"
             BlueprintName = "WXNavigationBarDemo"
             ReferencedContainer = "container:WXNavigationBarDemo.xcodeproj">
          </BuildableReference>
