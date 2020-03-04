@@ -81,6 +81,7 @@ extension SessionViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self), for: indexPath)
         cell.textLabel?.text = dataSource[indexPath.row].title
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
     

@@ -58,6 +58,7 @@ extension MeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = dataSource[indexPath.section].items[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self), for: indexPath)
+        cell.accessoryType = .disclosureIndicator
         cell.textLabel?.text = item.title
         cell.imageView?.image = UIImage(named: item.iconName)
         return cell
