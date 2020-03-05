@@ -110,6 +110,9 @@ extension SessionViewController: UITableViewDelegate {
         case .customBackButtonImage:
             let vc = ChatRoomViewController_CustomBackButtonImage(session: session)
             navigationController?.pushViewController(vc, animated: true)
+        case .customBackButton:
+            let vc = ChatRoomViewController_CustomBackButton(session: session)
+            navigationController?.pushViewController(vc, animated: true)
         case .shadowImage:
             let vc = ChatRoomViewController_ShadowImage(session: session)
             navigationController?.pushViewController(vc, animated: true)

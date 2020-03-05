@@ -26,6 +26,7 @@ WeChat NavigationBar
       * [Shadow Image](#shadow-image)
       * [Shadow Image Tint Color](#shadow-image-tint-color)
       * [Back Button Image](#back-button-image)
+      * [Back Buttom Custom View](#back-button-custom-view)
       * [fullscreen interactive pop gesture](#fullscreen-interactive-pop-gesture)
       * [interactivePopMaxAllowedInitialDistanceToLeftEdge](#interactivepopmaxallowedinitialdistancetoleftedge)
 * [Advance usage](#advance-usage)
@@ -85,7 +86,7 @@ Once you have your Swift package set up, adding WXNavigationBar as a dependency 
 
 ```
 dependencies: [
-    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.8.0"))
+    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.8.2"))
 ]
 ```
 
@@ -126,6 +127,10 @@ You can configure following options:
 ```swift
 /// Back Image for Navigation Bar
 public static var backImage: UIImage? = Utility.backImage
+
+/// Use custom view to create back button.
+/// Note: You do not need to add tap event to custom view. It's handled in WXNavigationBar.
+public static var backButtonCustomView: UIView? = nil
         
 /// Background Image for NavigationBar
 public static var backgroundImage: UIImage? = nil
@@ -226,6 +231,19 @@ You can specify navigation bar back image for specific view controller:
 ```swift
 override var wx_backImage: UIImage? {
     return UIImage(named: "icons_view_controller_back_image")
+}
+```
+
+#### Back Buttom Custom View
+
+You can specify with back button with custom view:
+
+```swift
+override var wx_backButtonCustomView: UIView? {
+    let label = UILabel()
+    label.text = "back"
+    label.textAlignment = .center
+    return label
 }
 ```
 

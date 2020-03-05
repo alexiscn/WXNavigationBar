@@ -23,6 +23,7 @@ WeChat NavigationBar
       * [导航栏阴影图片](#导航栏阴影图片)
       * [导航栏阴影颜色](#导航栏阴影颜色)
       * [导航栏返回按钮图片](#导航栏返回按钮图片)
+      * [导航栏返回按钮自定义](#导航栏返回按钮自定义)
       * [启用全屏返回手势](#启用全屏返回手势)
       * [全屏手势返回距离](#全屏手势返回距离)
 * [高级用法](#高级用法)
@@ -76,7 +77,7 @@ github alexiscn/WXNavigationBar
 
 ```
 dependencies: [
-    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.8.0"))
+    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.8.2"))
 ]
 ```
 
@@ -117,6 +118,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```swift
 /// 导航栏返回按钮
 public static var backImage: UIImage? = Utility.backImage
+
+/// 自定义视图定制导航栏返回按钮
+public static var backButtonCustomView: UIView? = nil
         
 /// 导航栏背景图片
 public static var backgroundImage: UIImage? = nil
@@ -213,6 +217,19 @@ override var wx_shadowImageTintColor: UIColor? {
 ```swift
 override var wx_backImage: UIImage? {
     return UIImage(named: "icons_view_controller_back_image")
+}
+```
+
+#### 导航栏返回按钮自定义
+
+你可以创建自定义视图来设定自定义返回按钮：
+
+```swift
+override var wx_backButtonCustomView: UIView? {
+    let label = UILabel()
+    label.text = "back"
+    label.textAlignment = .center
+    return label
 }
 ```
 

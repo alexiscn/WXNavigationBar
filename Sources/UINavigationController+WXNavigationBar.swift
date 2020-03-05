@@ -134,8 +134,17 @@ extension UINavigationController {
         
         if viewControllers.count > 0 {
             viewController.hidesBottomBarWhenPushed = true
-            let backImage = viewController.wx_backImage
-            let backButtonItem = UIBarButtonItem(image: backImage, style: .plain, target: self, action: #selector(backButtonClicked))
+            
+            let backButtonItem: UIBarButtonItem
+            if let customView = viewController.wx_backButtonCustomView {
+                backButtonItem = UIBarButtonItem(customView: customView)
+                let tap = UITapGestureRecognizer(target: self, action: #selector(backButtonClicked))
+                customView.isUserInteractionEnabled = true
+                customView.addGestureRecognizer(tap)
+            } else {
+                let backImage = viewController.wx_backImage
+                backButtonItem = UIBarButtonItem(image: backImage, style: .plain, target: self, action: #selector(backButtonClicked))
+            }
             viewController.navigationItem.leftBarButtonItem = backButtonItem
         }
         

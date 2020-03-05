@@ -21,6 +21,7 @@ extension UIViewController {
         static var useSystemBlurNavBar = "WXNavigationBar_useSystemBlurNavBar"
         static var shadowImage = "WXNavigationBar_shadowImage"
         static var shadowImageTintColor = "WXNavigationBar_shadowImageTintColor"
+        static var backButtonCustomView = "WXNavigationBar_backButtonCustomView"
         static var backImage = "WXNavigationBar_backImage"
         
         static var interactiveEnabled = "WXNavigationBar_interactivePopEnabled"
@@ -159,6 +160,18 @@ extension UIViewController {
                                  backImage,
                                  .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return backImage
+    }
+    
+    @objc open var wx_backButtonCustomView: UIView? {
+        if let backButtonCustomView = objc_getAssociatedObject(self, &AssociatedKeys.backButtonCustomView) as? UIView {
+            return backButtonCustomView
+        }
+        let backButtonCustomView = WXNavigationBar.NavBar.backButtonCustomView
+        objc_setAssociatedObject(self,
+                                 &AssociatedKeys.backButtonCustomView,
+                                 backButtonCustomView,
+                                 .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        return backButtonCustomView
     }
     
     /// A Boolean value indicating whether fullscreen pop gesture is enabled.
