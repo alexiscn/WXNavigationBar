@@ -26,7 +26,7 @@ WeChat NavigationBar
       * [Shadow Image](#shadow-image)
       * [Shadow Image Tint Color](#shadow-image-tint-color)
       * [Back Button Image](#back-button-image)
-      * [Back Buttom Custom View](#back-button-custom-view)
+      * [Back Button Custom View](#back-button-custom-view)
       * [fullscreen interactive pop gesture](#fullscreen-interactive-pop-gesture)
       * [interactivePopMaxAllowedInitialDistanceToLeftEdge](#interactivepopmaxallowedinitialdistancetoleftedge)
 * [Advance usage](#advance-usage)
@@ -234,7 +234,7 @@ override var wx_backImage: UIImage? {
 }
 ```
 
-#### Back Buttom Custom View
+#### Back Button Custom View
 
 You can specify with back button with custom view:
 
