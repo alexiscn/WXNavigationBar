@@ -236,7 +236,7 @@ override var wx_backImage: UIImage? {
 
 #### Back Button Custom View
 
-You can specify with back button with custom view:
+You can specify back button with custom view:
 
 ```swift
 override var wx_backButtonCustomView: UIView? {

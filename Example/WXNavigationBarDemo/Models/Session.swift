@@ -16,6 +16,7 @@ enum Session: CaseIterable {
     case shadowImage
     case customBackButtonImage
     case customBackButton
+    case translucent
     
     var title: String {
         switch self {
@@ -31,6 +32,8 @@ enum Session: CaseIterable {
             return "Customize Back Button Image"
         case .customBackButton:
             return "Customize Back Button"
+        case .translucent:
+            return "Translucent NavigationBar"
         }
     }
     

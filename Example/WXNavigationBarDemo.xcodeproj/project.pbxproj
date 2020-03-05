@@ -34,6 +34,7 @@
 		A3F89C41240E6D1F00202710 /* ChatRoomViewController_ShadowImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F89C40240E6D1F00202710 /* ChatRoomViewController_ShadowImage.swift */; };
 		A3F89C45240FBF1E00202710 /* MeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F89C44240FBF1E00202710 /* MeItem.swift */; };
 		A3F89C47241094D900202710 /* ChatRoomViewController_CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F89C46241094D900202710 /* ChatRoomViewController_CustomBackButton.swift */; };
+		A3F89C492410B79600202710 /* ChatRoomViewController_Translucent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F89C482410B79600202710 /* ChatRoomViewController_Translucent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		A3F89C40240E6D1F00202710 /* ChatRoomViewController_ShadowImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController_ShadowImage.swift; sourceTree = "<group>"; };
 		A3F89C44240FBF1E00202710 /* MeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeItem.swift; sourceTree = "<group>"; };
 		A3F89C46241094D900202710 /* ChatRoomViewController_CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController_CustomBackButton.swift; sourceTree = "<group>"; };
+		A3F89C482410B79600202710 /* ChatRoomViewController_Translucent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController_Translucent.swift; sourceTree = "<group>"; };
 		DAE969A7AAF992E857E3CE7B /* Pods-WXNavigationBarDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WXNavigationBarDemo.debug.xcconfig"; path = "Target Support Files/Pods-WXNavigationBarDemo/Pods-WXNavigationBarDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		F95D4246861D0B22A0F960D9 /* Pods-WXNavigationBarDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WXNavigationBarDemo.release.xcconfig"; path = "Target Support Files/Pods-WXNavigationBarDemo/Pods-WXNavigationBarDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,6 +188,7 @@
 				A3F89C3E240E6CCB00202710 /* ChatRoomViewController_Transparent.swift */,
 				A3F89C40240E6D1F00202710 /* ChatRoomViewController_ShadowImage.swift */,
 				A3F89C46241094D900202710 /* ChatRoomViewController_CustomBackButton.swift */,
+				A3F89C482410B79600202710 /* ChatRoomViewController_Translucent.swift */,
 			);
 			path = ChatRoom;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				A369A57A2402B00B009A1396 /* SessionViewController.swift in Sources */,
 				A369A592240375AD009A1396 /* SessionMoreFrameFloatView.swift in Sources */,
 				A369A5842402BA05009A1396 /* ChatRoomViewController.swift in Sources */,
+				A3F89C492410B79600202710 /* ChatRoomViewController_Translucent.swift in Sources */,
 				A369A5822402B035009A1396 /* RootViewController.swift in Sources */,
 				A3F89C3C240E6BF200202710 /* ChatRoomViewController_CustomBackButtonImage.swift in Sources */,
 				A369A5AB240696A5009A1396 /* MomentHeaderView.swift in Sources */,

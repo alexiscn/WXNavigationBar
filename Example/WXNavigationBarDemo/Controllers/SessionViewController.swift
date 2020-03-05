@@ -116,6 +116,9 @@ extension SessionViewController: UITableViewDelegate {
         case .shadowImage:
             let vc = ChatRoomViewController_ShadowImage(session: session)
             navigationController?.pushViewController(vc, animated: true)
+        case .translucent:
+            let vc = ChatRoomViewController_Translucent(session: session)
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
