@@ -9,7 +9,6 @@ import UIKit
 
 typealias NavigationBarFrameUpdatedHandler = (CGRect) -> Void
 
-// Expericemental
 extension UINavigationBar {
     
     private struct AssociatedKeys {
@@ -37,5 +36,4 @@ extension UINavigationBar {
         frameUpdatedHandler?(frame)
         wx_layoutSubviews()
     }
-    
 }

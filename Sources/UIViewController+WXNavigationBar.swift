@@ -235,26 +235,9 @@ extension UIViewController {
                                             width: view.bounds.width,
                                             height: Utility.navigationBarHeight)
             if wx_useSystemBlurNavBar {
-                wx_navigationBar.backgroundColor = .clear
-                wx_navigationBar.backgroundImageView.isHidden = true
-                wx_navigationBar.visualEffectView.isHidden = false
+                wx_navigationBar.useSystemBlurEffect()
             }
             view.addSubview(wx_navigationBar)
-            
-            navigationController?.navigationBar.frameUpdatedHandler = { [weak self] newFrame in
-                
-                guard let self = self else { return }
-                
-                // Avoid frame update when swipe back from large title mode to normal
-                if self.wx_willDisappear {
-                    return
-                }
-                let frame = CGRect(x: 0,
-                                   y: 0,
-                                   width: newFrame.width,
-                                   height: newFrame.height + newFrame.origin.y)
-                self.wx_navigationBar.frame = frame
-            }
         }
         
         wx_viewDidLoad()
@@ -266,6 +249,18 @@ extension UIViewController {
             navigationController?.navigationBar.tintColor = wx_barTintColor
             navigationController?.navigationBar.titleTextAttributes = wx_titleTextAttributes
             view.bringSubviewToFront(wx_navigationBar)
+        }
+        navigationController?.navigationBar.frameUpdatedHandler = { [weak self] newFrame in
+            guard let self = self else { return }
+            // Avoid frame update when swipe back from large title mode to normal
+            if self.wx_willDisappear {
+                return
+            }
+            let frame = CGRect(x: 0,
+                               y: 0,
+                               width: newFrame.width,
+                               height: newFrame.height + newFrame.origin.y)
+            self.wx_navigationBar.frame = frame
         }
         wx_willDisappear = false
         wx_viewWillAppear(animated)
