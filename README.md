@@ -86,7 +86,7 @@ Once you have your Swift package set up, adding WXNavigationBar as a dependency 
 
 ```
 dependencies: [
-    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.8.2"))
+    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.8.3"))
 ]
 ```
 
