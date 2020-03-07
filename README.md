@@ -51,7 +51,7 @@ WeChat NavigationBar
 - [x] Support iOS 13 dark mode
 - [x] Support fullscreen pop gesture
 - [x] As Simple as using UINavigationBar 
- 
+
 ## Requirements
 
 - iOS 12.0+
@@ -67,7 +67,7 @@ WeChat NavigationBar
 ```bash
 use_frameworks!
 
-pod 'WXNavigationBar'
+pod 'WXNavigationBar', '~> 1.8.5'
 ```
 
 ### Carthage
@@ -86,7 +86,7 @@ Once you have your Swift package set up, adding WXNavigationBar as a dependency 
 
 ```
 dependencies: [
-    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.8.3"))
+    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.8.5"))
 ]
 ```
 

@@ -14,4 +14,7 @@ class ChatRoomViewController_BackgroundImage: ChatRoomViewController {
         return UIImage(named: "icon_nav_bg")
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 }

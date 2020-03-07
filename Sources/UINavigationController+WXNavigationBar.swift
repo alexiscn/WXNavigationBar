@@ -176,4 +176,8 @@ extension UINavigationController {
     open override var childForStatusBarStyle: UIViewController? {
         return topViewController
     }
+    
+    open override var childForStatusBarHidden: UIViewController? {
+        return topViewController
+    }
 }
