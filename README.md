@@ -1,12 +1,9 @@
 
 ![](Assets/WXNavigationBar_Logo@2x.png)
 
-
-
-```
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/WXNavigationBar.svg)](https://img.shields.io/cocoapods/v/WXNavigationBar.svg)
 [![Platform](https://img.shields.io/cocoapods/p/WXNavigationBar.svg?style=flat)](#)
-```
+[![License](https://img.shields.io/cocoapods/l/WXNavigationBar.svg?style=flat)](#)
 
 
 
