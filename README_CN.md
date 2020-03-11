@@ -67,7 +67,7 @@ WeChat NavigationBar
 
 ```bash
 use_frameworks!
-pod 'WXNavigationBar', '~> 1.8.5'
+pod 'WXNavigationBar', '~> 1.8.6'
 ```
 
 ### Carthage
@@ -82,7 +82,7 @@ github alexiscn/WXNavigationBar
 
 ```
 dependencies: [
-    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.8.5"))
+    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.8.6"))
 ]
 ```
 
