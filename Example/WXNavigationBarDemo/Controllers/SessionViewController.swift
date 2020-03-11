@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FLEX
 
 class SessionViewController: UIViewController {
 
@@ -119,6 +120,8 @@ extension SessionViewController: UITableViewDelegate {
         case .translucent:
             let vc = ChatRoomViewController_Translucent(session: session)
             navigationController?.pushViewController(vc, animated: true)
+        case .flex:
+            FLEXManager.shared()?.showExplorer()
         }
     }
 }

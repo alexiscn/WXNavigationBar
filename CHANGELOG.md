@@ -1,5 +1,8 @@
 # Change log
 
+### 1.8.6
+
+- fix wx_navigationBar display issue inside UITableViewController
 
 
 ### 1.8.5

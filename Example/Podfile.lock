@@ -1,16 +1,23 @@
 PODS:
+  - FLEX (3.1.2)
   - WXNavigationBar (1.8.5)
 
 DEPENDENCIES:
+  - FLEX
   - WXNavigationBar (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - FLEX
 
 EXTERNAL SOURCES:
   WXNavigationBar:
     :path: "../"
 
 SPEC CHECKSUMS:
+  FLEX: e13e805fc3eec8732cc227d1f7508770d46e9587
   WXNavigationBar: cd28619e12102ef1fb0784f0ef9608bf74e34ebd
 
-PODFILE CHECKSUM: caf3be77388a6c2d746df00922b4501176d986ca
+PODFILE CHECKSUM: dcaea8c6bd82403e0f7b1a5d5a02bb05693944bd
 
 COCOAPODS: 1.9.0

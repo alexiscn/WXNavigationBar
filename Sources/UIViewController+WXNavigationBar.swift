@@ -162,6 +162,7 @@ extension UIViewController {
         return backImage
     }
     
+    /// A custom view for back button. eg: you can create a label to display the back button.
     @objc open var wx_backButtonCustomView: UIView? {
         if let backButtonCustomView = objc_getAssociatedObject(self, &AssociatedKeys.backButtonCustomView) as? UIView {
             return backButtonCustomView
@@ -188,6 +189,8 @@ extension UIViewController {
         return interactivePopEnabled
     }
     
+    /// The initial distance to left edge allow to interactive pop gesture.
+    /// 0 by default, which means no limit.
     @objc open var wx_interactivePopMaxAllowedInitialDistanceToLeftEdge: CGFloat {
         get {
             return objc_getAssociatedObject(self, &AssociatedKeys.interactivePopMaxAllowedInitialDistanceToLeftEdge) as? CGFloat ?? 0.0
@@ -237,7 +240,13 @@ extension UIViewController {
             if wx_useSystemBlurNavBar {
                 wx_navigationBar.useSystemBlurEffect()
             }
-            view.addSubview(wx_navigationBar)
+            // Fix when ViewController is UITableViewController, the root view is UITableView
+            // and wx_navigation layout is wrong.
+            if view is UITableView {
+                navigationController?.view.insertSubview(wx_navigationBar, at: 1)
+            } else {
+                view.addSubview(wx_navigationBar)
+            }
         }
         
         wx_viewDidLoad()
