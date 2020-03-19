@@ -86,33 +86,26 @@ fileprivate class _WXFullscreenPopGestureRecognizerDelegate: NSObject, UIGesture
 extension UINavigationController {
     
     private struct AssociatedKeys {
-        static var gestureDelegate = "WXNavigationBar_gestureDelegate"
-        static var fullscreenPopGestureDelegate = "WXNavigationBar_fullscreenPopGestureDelegate"
-        static var fullscreenPopGestureRecognizer = "WXNavigationBar_fullscreenPopGestureRecognizer"
+        static var gestureDelegate = "gestureDelegate"
+        static var fullscreenPopGestureDelegate = "fullscreenPopGestureDelegate"
+        static var fullscreenPopGestureRecognizer = "fullscreenPopGestureRecognizer"
     }
     
     private var wx_gestureDelegate: _WXNavigationGestureRecognizerDelegate? {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.gestureDelegate) as? _WXNavigationGestureRecognizerDelegate
-        }
-        set {
-            objc_setAssociatedObject(self,
-                                     &AssociatedKeys.gestureDelegate,
-                                     newValue,
-                                     .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
+        get { return objc_getAssociatedObject(self, &AssociatedKeys.gestureDelegate) as? _WXNavigationGestureRecognizerDelegate }
+        set { objc_setAssociatedObject(self, &AssociatedKeys.gestureDelegate, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }
     
     private var wx_fullscreenPopGestureDelegate: _WXFullscreenPopGestureRecognizerDelegate {
-        if let fullscreenPopGestureDelegate = objc_getAssociatedObject(self, &AssociatedKeys.fullscreenPopGestureDelegate) as? _WXFullscreenPopGestureRecognizerDelegate {
-            return fullscreenPopGestureDelegate
+        if let delegate = objc_getAssociatedObject(self, &AssociatedKeys.fullscreenPopGestureDelegate) as? _WXFullscreenPopGestureRecognizerDelegate {
+            return delegate
         }
-        let fullscreenPopGestureDelegate = _WXFullscreenPopGestureRecognizerDelegate(navigationController: self)
+        let delegate = _WXFullscreenPopGestureRecognizerDelegate(navigationController: self)
         objc_setAssociatedObject(self,
                                  &AssociatedKeys.fullscreenPopGestureDelegate,
-                                 fullscreenPopGestureDelegate,
+                                 delegate,
                                  .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        return fullscreenPopGestureDelegate
+        return delegate
     }
     
     open var wx_fullscreenPopGestureRecognizer: UIPanGestureRecognizer {

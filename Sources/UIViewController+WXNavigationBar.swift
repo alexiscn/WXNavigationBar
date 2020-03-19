@@ -11,22 +11,22 @@ import UIKit
 extension UIViewController {
     
     private struct AssociatedKeys {
-        static var navigationBar = "WXNavigationBar_navigationBar"
-        static var navigationBarBackgroundColor = "WXNavigationBar_navigationBarBackgroundColor"
-        static var navigationBarBackgroundImage = "WXNavigationBar_navigationBarBackgroundImage"
+        static var navigationBar = "navigationBar"
+        static var navigationBarBackgroundColor = "navigationBarBackgroundColor"
+        static var navigationBarBackgroundImage = "navigationBarBackgroundImage"
         
-        static var barBarTintColor = "WXNavigationBar_barBarTintColor"
-        static var barTintColor = "WXNavigationBar_barTintColor"
-        static var titleTextAttributes = "WXNavigationBar_titleTextAttributes"
-        static var useSystemBlurNavBar = "WXNavigationBar_useSystemBlurNavBar"
-        static var shadowImage = "WXNavigationBar_shadowImage"
-        static var shadowImageTintColor = "WXNavigationBar_shadowImageTintColor"
-        static var backButtonCustomView = "WXNavigationBar_backButtonCustomView"
-        static var backImage = "WXNavigationBar_backImage"
+        static var barBarTintColor = "barBarTintColor"
+        static var barTintColor = "barTintColor"
+        static var titleTextAttributes = "titleTextAttributes"
+        static var useSystemBlurNavBar = "useSystemBlurNavBar"
+        static var shadowImage = "shadowImage"
+        static var shadowImageTintColor = "shadowImageTintColor"
+        static var backButtonCustomView = "backButtonCustomView"
+        static var backImage = "backImage"
         
-        static var disableInteractivePopGesture = "WXNavigationBar_disableInteractivePopGesture"
-        static var fullScreenInteractiveEnabled = "WXNavigationBar_fullScreenInteractivePopEnabled"
-        static var interactivePopMaxAllowedInitialDistanceToLeftEdge = "WXNavigationBar_interactivePopMaxAllowedInitialDistanceToLeftEdge"
+        static var disableInteractivePopGesture = "disableInteractivePopGesture"
+        static var fullScreenInteractiveEnabled = "fullScreenInteractivePopEnabled"
+        static var interactivePopMaxAllowedInitialDistanceToLeftEdge = "interactivePopMaxAllowedInitialDistanceToLeftEdge"
         
         // For internal usage
         static var willDisappear = "WXNavigationBar_willDisappear"
@@ -50,10 +50,7 @@ extension UIViewController {
             return color
         }
         let color = WXNavigationBar.NavBar.backgroundColor
-        objc_setAssociatedObject(self,
-                                 &AssociatedKeys.navigationBarBackgroundColor,
-                                 color,
-                                 .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(self, &AssociatedKeys.navigationBarBackgroundColor, color, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return color
     }
     
@@ -63,10 +60,7 @@ extension UIViewController {
             return backgroundImage
         }
         let backgroundImage = WXNavigationBar.NavBar.backgroundImage
-        objc_setAssociatedObject(self,
-                                 &AssociatedKeys.navigationBarBackgroundImage,
-                                 backgroundImage,
-                                 .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(self, &AssociatedKeys.navigationBarBackgroundImage, backgroundImage, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return backgroundImage
     }
     
@@ -77,10 +71,7 @@ extension UIViewController {
             return useSystemBlurNavBar
         }
         let useSystemBlurNavBar = false
-        objc_setAssociatedObject(self,
-                                 &AssociatedKeys.useSystemBlurNavBar,
-                                 useSystemBlurNavBar,
-                                 .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(self, &AssociatedKeys.useSystemBlurNavBar, useSystemBlurNavBar, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return useSystemBlurNavBar
     }
     
@@ -90,10 +81,7 @@ extension UIViewController {
             return barBarTintColor
         }
         let barBarTintColor: UIColor? = nil
-        objc_setAssociatedObject(self,
-                                 &AssociatedKeys.barBarTintColor,
-                                 barBarTintColor,
-                                 .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(self, &AssociatedKeys.barBarTintColor, barBarTintColor, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return barBarTintColor
     }
     
@@ -103,10 +91,7 @@ extension UIViewController {
             return barTintColor
         }
         let barTintColor = WXNavigationBar.NavBar.tintColor
-        objc_setAssociatedObject(self,
-                                 &AssociatedKeys.barTintColor,
-                                 barTintColor,
-                                 .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(self, &AssociatedKeys.barTintColor, barTintColor, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return barTintColor
     }
     
@@ -116,10 +101,7 @@ extension UIViewController {
             return attributes
         }
         let attributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.black]
-        objc_setAssociatedObject(self,
-                                 &AssociatedKeys.titleTextAttributes,
-                                 attributes,
-                                 .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(self, &AssociatedKeys.titleTextAttributes, attributes, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return attributes
     }
     
@@ -129,10 +111,7 @@ extension UIViewController {
             return shadowImage
         }
         let shadowImage = WXNavigationBar.NavBar.shadowImage
-        objc_setAssociatedObject(self,
-                                 &AssociatedKeys.shadowImage,
-                                 shadowImage,
-                                 .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(self, &AssociatedKeys.shadowImage, shadowImage, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return shadowImage
     }
     
@@ -143,10 +122,7 @@ extension UIViewController {
             return shadowImageTintColor
         }
         let shadowImageTintColor: UIColor? = nil
-        objc_setAssociatedObject(self,
-                                 &AssociatedKeys.shadowImageTintColor,
-                                 shadowImageTintColor,
-                                 .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(self, &AssociatedKeys.shadowImageTintColor, shadowImageTintColor, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return shadowImageTintColor
     }
 
@@ -156,10 +132,7 @@ extension UIViewController {
             return backImage
         }
         let backImage = WXNavigationBar.NavBar.backImage
-        objc_setAssociatedObject(self,
-                                 &AssociatedKeys.backImage,
-                                 backImage,
-                                 .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(self, &AssociatedKeys.backImage, backImage, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return backImage
     }
     
@@ -169,10 +142,7 @@ extension UIViewController {
             return backButtonCustomView
         }
         let backButtonCustomView = WXNavigationBar.NavBar.backButtonCustomView
-        objc_setAssociatedObject(self,
-                                 &AssociatedKeys.backButtonCustomView,
-                                 backButtonCustomView,
-                                 .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(self, &AssociatedKeys.backButtonCustomView, backButtonCustomView, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return backButtonCustomView
     }
     
@@ -182,10 +152,7 @@ extension UIViewController {
             return disableInteractivePopGesture
         }
         let disableInteractivePopGesture = false
-        objc_setAssociatedObject(self,
-                                 &AssociatedKeys.disableInteractivePopGesture,
-                                 disableInteractivePopGesture,
-                                 .OBJC_ASSOCIATION_ASSIGN)
+        objc_setAssociatedObject(self, &AssociatedKeys.disableInteractivePopGesture, disableInteractivePopGesture, .OBJC_ASSOCIATION_ASSIGN)
         return disableInteractivePopGesture
     }
     
@@ -206,27 +173,13 @@ extension UIViewController {
     /// The initial distance to left edge allow to interactive pop gesture.
     /// 0 by default, which means no limit.
     @objc open var wx_interactivePopMaxAllowedInitialDistanceToLeftEdge: CGFloat {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.interactivePopMaxAllowedInitialDistanceToLeftEdge) as? CGFloat ?? 0.0
-        }
-        set {
-            objc_setAssociatedObject(self,
-                                     &AssociatedKeys.interactivePopMaxAllowedInitialDistanceToLeftEdge,
-                                     newValue,
-                                     .OBJC_ASSOCIATION_ASSIGN)
-        }
+        get { return objc_getAssociatedObject(self, &AssociatedKeys.interactivePopMaxAllowedInitialDistanceToLeftEdge) as? CGFloat ?? 0.0 }
+        set { objc_setAssociatedObject(self, &AssociatedKeys.interactivePopMaxAllowedInitialDistanceToLeftEdge, newValue, .OBJC_ASSOCIATION_ASSIGN) }
     }
     
     private var wx_willDisappear: Bool {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.willDisappear) as? Bool ?? false
-        }
-        set {
-            objc_setAssociatedObject(self,
-                                     &AssociatedKeys.willDisappear,
-                                     newValue,
-                                     .OBJC_ASSOCIATION_ASSIGN)
-        }
+        get { return objc_getAssociatedObject(self, &AssociatedKeys.willDisappear) as? Bool ?? false }
+        set { objc_setAssociatedObject(self, &AssociatedKeys.willDisappear, newValue, .OBJC_ASSOCIATION_ASSIGN) }
     }
     
     static let wx_swizzle: Void = {
@@ -236,6 +189,10 @@ extension UIViewController {
         swizzleMethod(cls, #selector(UIViewController.viewDidAppear(_:)), #selector(UIViewController.wx_viewDidAppear(_:)))
         swizzleMethod(cls, #selector(UIViewController.viewWillDisappear(_:)), #selector(UIViewController.wx_viewWillDisappear(_:)))
     }()
+}
+
+// MARK: - Private Work
+extension UIViewController {
     
     @objc private func wx_viewDidLoad() {
         if navigationController != nil {
@@ -251,11 +208,11 @@ extension UIViewController {
                                             y: 0,
                                             width: view.bounds.width,
                                             height: Utility.navigationBarHeight)
-            if wx_useSystemBlurNavBar {
-                wx_navigationBar.useSystemBlurEffect()
-            }
-            // Fix when ViewController is UITableViewController, the root view is UITableView
-            // and wx_navigation layout is wrong.
+            wx_navigationBar.enableBlurEffect(wx_useSystemBlurNavBar)
+            
+            // Fix when ViewController is UITableViewController.
+            // wx_navigationBar will layout strange when the root view is UITableView.
+            // So we add wx_navigationBar to navigationController
             if view is UITableView {
                 navigationController?.view.insertSubview(wx_navigationBar, at: 1)
             } else {
@@ -273,17 +230,16 @@ extension UIViewController {
             navigationController?.navigationBar.titleTextAttributes = wx_titleTextAttributes
             view.bringSubviewToFront(wx_navigationBar)
         }
-        navigationController?.navigationBar.frameUpdatedHandler = { [weak self] newFrame in
+        
+        navigationController?.navigationBar.frameDidUpdated = { [weak self] frame in
             guard let self = self else { return }
-            // Avoid frame update when swipe back from large title mode to normal
+            // Avoid navigationBar frame updated when swipe back from view controller
+            // with large title mode to view controller with normal navigationBar
             if self.wx_willDisappear {
                 return
             }
-            let frame = CGRect(x: 0,
-                               y: 0,
-                               width: newFrame.width,
-                               height: newFrame.height + newFrame.origin.y)
-            self.wx_navigationBar.frame = frame
+            let newFrame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height + frame.origin.y)
+            self.wx_navigationBar.frame = newFrame
         }
         wx_willDisappear = false
         wx_viewWillAppear(animated)
@@ -296,23 +252,9 @@ extension UIViewController {
     
     @objc private func wx_viewDidAppear(_ animated: Bool) {
         if let navigationController = self.navigationController {
-            navigationController.interactivePopGestureRecognizer?.isEnabled = navigationController.viewControllers.count > 1
+            let interactivePopGestureRecognizerEnabled = navigationController.viewControllers.count > 1
+            navigationController.interactivePopGestureRecognizer?.isEnabled = interactivePopGestureRecognizerEnabled
         }
         wx_viewDidAppear(animated)
-    }
-}
-
-extension UIApplication {
-    
-    private static let runOnce: Void = {
-        UINavigationController.wx_navswizzle
-        UIViewController.wx_swizzle
-        UINavigationBar.wx_swizzle
-    }()
-    
-    override open var next: UIResponder? {
-        // Called before applicationDidFinishLaunching
-        UIApplication.runOnce
-        return super.next
     }
 }

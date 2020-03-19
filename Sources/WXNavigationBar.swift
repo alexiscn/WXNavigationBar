@@ -91,9 +91,11 @@ public class WXNavigationBar: UIView {
                                        height: lineHeight)
     }
     
-    func useSystemBlurEffect() {
-        backgroundColor = .clear
-        backgroundImageView.isHidden = true
-        visualEffectView.isHidden = false
+    func enableBlurEffect(_ enabled: Bool) {
+        if enabled {
+            backgroundColor = .clear
+            backgroundImageView.isHidden = true
+            visualEffectView.isHidden = false
+        }
     }
 }

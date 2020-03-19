@@ -74,7 +74,7 @@ WeChat NavigationBar
 ```bash
 use_frameworks!
 
-pod 'WXNavigationBar', '~> 1.8.8'
+pod 'WXNavigationBar', '~> 1.9.0'
 ```
 
 ### Carthage
@@ -93,7 +93,7 @@ Once you have your Swift package set up, adding WXNavigationBar as a dependency 
 
 ```
 dependencies: [
-    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.8.8"))
+    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.9.0"))
 ]
 ```
 
@@ -265,7 +265,7 @@ override var wx_disableInteractivePopGesture: Bool {
 #### fullscreen interactive pop gesture
 
 ```swift
-override var wx_interactivePopEnabled: Bool {
+override var wx_fullScreenInteractivePopEnabled: Bool {
     return false
 }
 ```

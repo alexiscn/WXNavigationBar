@@ -6,7 +6,8 @@
 [![License](https://img.shields.io/cocoapods/l/WXNavigationBar.svg?style=flat)](#)
 
 # WXNavigationBar
-WeChat NavigationBar
+
+类似微信一样的导航栏
 
 ![](Assets/Preview.gif)
 
@@ -68,7 +69,7 @@ WeChat NavigationBar
 
 ```bash
 use_frameworks!
-pod 'WXNavigationBar', '~> 1.8.8'
+pod 'WXNavigationBar', '~> 1.9.0'
 ```
 
 ### Carthage
@@ -83,7 +84,7 @@ github alexiscn/WXNavigationBar
 
 ```
 dependencies: [
-    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.8.8"))
+    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.9.0"))
 ]
 ```
 
@@ -92,18 +93,18 @@ dependencies: [
 
 `WXNavigationBar`通过将系统导航栏设为透明，在View中添加一个NavigationBar相同大小，相同位置的View作为假的导航栏。
 
-原始的UINavigationBar还是用于处理手势相关逻辑，WXNavigationBar用于展示部分，比如背景颜色、背景图片等。
+原始的`UINavigationBar`还是用于处理手势相关逻辑，`WXNavigationBar`用于展示部分，比如背景颜色、背景图片等。
 
-所以你可以像平常使用UINavigationBar一样，当你需要处理导航栏显示的时候，使用WXNavigationBar。
+所以你可以像平常使用`UINavigationBar`一样，当你需要处理导航栏显示的时候，使用`WXNavigationBar`。
 
 
 ## 开始使用
 
-使用WXNavigationBar不需要特殊的初始化配置，默认的就如同微信中的导航栏一样。当你需要配置时，有两种方式可以配置。使用`UINavigationController.Nav`中的属性对`UINavigationController`进行配置，或者重写`UIViewController`中的相关属性对`UIViewController`进行配置。
+使用`WXNavigationBar`不需要特殊的初始化配置，默认的就如同微信中的导航栏一样。当你需要配置时，有两种方式可以配置。使用`UINavigationController.Nav`中的属性对`UINavigationController`进行配置，或者重写`UIViewController`中的相关属性对`UIViewController`进行配置。
 
 ### 基于 UINavigationController 的配置
 
-在`AppDelegate.swift`中全局配置，可选
+在`AppDelegate.swift`中全局配置
 
 ```swift
 
@@ -239,18 +240,22 @@ override var wx_backButtonCustomView: UIView? {
 }
 ```
 
-#### 启用全屏返回手势
-
-```swift
-override var wx_interactivePopEnabled: Bool {
-    return false
-}
-```
-
 #### 禁用返回手势
+
+你可以在特定的ViewController中禁用手势返回：
 
 ```swift
 override var wx_disableInteractivePopGesture: Bool {
+    return true
+}
+```
+
+#### 启用全屏返回手势
+
+你可以在特定的ViewController启用全屏手势返回。默认是整个页面都会响应手势返回，通过`wx_interactivePopMaxAllowedInitialDistanceToLeftEdge`修改距离页面边缘的距离。
+
+```swift
+override var wx_fullScreenInteractivePopEnabled: Bool {
     return true
 }
 ```
