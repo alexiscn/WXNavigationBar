@@ -29,6 +29,7 @@ WeChat NavigationBar
       * [导航栏阴影颜色](#导航栏阴影颜色)
       * [导航栏返回按钮图片](#导航栏返回按钮图片)
       * [导航栏返回按钮自定义](#导航栏返回按钮自定义)
+      * [禁用返回手势](#禁用返回手势)
       * [启用全屏返回手势](#启用全屏返回手势)
       * [全屏手势返回距离](#全屏手势返回距离)
 * [高级用法](#高级用法)
@@ -67,7 +68,7 @@ WeChat NavigationBar
 
 ```bash
 use_frameworks!
-pod 'WXNavigationBar', '~> 1.8.6'
+pod 'WXNavigationBar', '~> 1.8.7'
 ```
 
 ### Carthage
@@ -82,7 +83,7 @@ github alexiscn/WXNavigationBar
 
 ```
 dependencies: [
-    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.8.6"))
+    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.8.7"))
 ]
 ```
 
@@ -243,6 +244,14 @@ override var wx_backButtonCustomView: UIView? {
 ```swift
 override var wx_interactivePopEnabled: Bool {
     return false
+}
+```
+
+#### 禁用返回手势
+
+```swift
+override var wx_disableInteractivePopGesture: Bool {
+    return true
 }
 ```
 

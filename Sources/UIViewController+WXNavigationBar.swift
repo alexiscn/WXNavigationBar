@@ -24,7 +24,8 @@ extension UIViewController {
         static var backButtonCustomView = "WXNavigationBar_backButtonCustomView"
         static var backImage = "WXNavigationBar_backImage"
         
-        static var interactiveEnabled = "WXNavigationBar_interactivePopEnabled"
+        static var disableInteractivePopGesture = "WXNavigationBar_disableInteractivePopGesture"
+        static var fullScreenInteractiveEnabled = "WXNavigationBar_fullScreenInteractivePopEnabled"
         static var interactivePopMaxAllowedInitialDistanceToLeftEdge = "WXNavigationBar_interactivePopMaxAllowedInitialDistanceToLeftEdge"
         
         // For internal usage
@@ -175,18 +176,31 @@ extension UIViewController {
         return backButtonCustomView
     }
     
+    /// A Boolean value indicating whether interactive pop gesture is disbabled. `false` by default.
+    @objc open var wx_disableInteractivePopGesture: Bool {
+        if let disableInteractivePopGesture = objc_getAssociatedObject(self, &AssociatedKeys.disableInteractivePopGesture) as? Bool {
+            return disableInteractivePopGesture
+        }
+        let disableInteractivePopGesture = false
+        objc_setAssociatedObject(self,
+                                 &AssociatedKeys.disableInteractivePopGesture,
+                                 disableInteractivePopGesture,
+                                 .OBJC_ASSOCIATION_ASSIGN)
+        return disableInteractivePopGesture
+    }
+    
     /// A Boolean value indicating whether fullscreen pop gesture is enabled.
     /// The default value of this property is `WXNavigationBar.NavBar.fullscreenPopGestureEnabled`.
-    @objc open var wx_interactivePopEnabled: Bool {
-        if let interactivePopEnabled = objc_getAssociatedObject(self, &AssociatedKeys.interactiveEnabled) as? Bool {
-            return interactivePopEnabled
+    @objc open var wx_fullScreenInteractivePopEnabled: Bool {
+        if let fullScreenInteractivePopEnabled = objc_getAssociatedObject(self, &AssociatedKeys.fullScreenInteractiveEnabled) as? Bool {
+            return fullScreenInteractivePopEnabled
         }
-        let interactivePopEnabled = WXNavigationBar.NavBar.fullscreenPopGestureEnabled
+        let fullScreenInteractivePopEnabled = WXNavigationBar.NavBar.fullscreenPopGestureEnabled
         objc_setAssociatedObject(self,
-                                 &AssociatedKeys.interactiveEnabled,
-                                 interactivePopEnabled,
+                                 &AssociatedKeys.fullScreenInteractiveEnabled,
+                                 fullScreenInteractivePopEnabled,
                                  .OBJC_ASSOCIATION_ASSIGN)
-        return interactivePopEnabled
+        return fullScreenInteractivePopEnabled
     }
     
     /// The initial distance to left edge allow to interactive pop gesture.

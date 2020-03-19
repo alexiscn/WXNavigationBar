@@ -1,13 +1,13 @@
 {
   "name": "WXNavigationBar",
-  "version": "1.8.5",
+  "version": "1.8.7",
   "license": {
     "type": "MIT"
   },
   "requires_arc": true,
   "source": {
     "git": "https://github.com/alexiscn/WXNavigationBar.git",
-    "tag": "1.8.5"
+    "tag": "1.8.7"
   },
   "summary": "WeChat NavigationBar",
   "homepage": "https://github.com/alexiscn/WXNavigationBar",

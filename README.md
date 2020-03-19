@@ -33,6 +33,7 @@ WeChat NavigationBar
       * [Shadow Image Tint Color](#shadow-image-tint-color)
       * [Back Button Image](#back-button-image)
       * [Back Button Custom View](#back-button-custom-view)
+      * [Disable Interactive Pop Gesture](#disable-interactive-pop-gesture)
       * [fullscreen interactive pop gesture](#fullscreen-interactive-pop-gesture)
       * [interactivePopMaxAllowedInitialDistanceToLeftEdge](#interactivepopmaxallowedinitialdistancetoleftedge)
 * [Advance usage](#advance-usage)
@@ -73,7 +74,7 @@ WeChat NavigationBar
 ```bash
 use_frameworks!
 
-pod 'WXNavigationBar', '~> 1.8.6'
+pod 'WXNavigationBar', '~> 1.8.7'
 ```
 
 ### Carthage
@@ -92,7 +93,7 @@ Once you have your Swift package set up, adding WXNavigationBar as a dependency 
 
 ```
 dependencies: [
-    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.8.6"))
+    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.8.7"))
 ]
 ```
 
@@ -250,6 +251,14 @@ override var wx_backButtonCustomView: UIView? {
     label.text = "back"
     label.textAlignment = .center
     return label
+}
+```
+
+#### Disable Interactive Pop Gesture
+
+```swift
+override var wx_disableInteractivePopGesture: Bool {
+    return true
 }
 ```
 

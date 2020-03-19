@@ -17,6 +17,7 @@ enum Session: CaseIterable {
     case customBackButtonImage
     case customBackButton
     case translucent
+    case disableInteractivePopGesture
     case flex
     
     var title: String {
@@ -35,6 +36,8 @@ enum Session: CaseIterable {
             return "Customize Back Button"
         case .translucent:
             return "Translucent NavigationBar"
+        case .disableInteractivePopGesture:
+            return "Disable Interactive Pop Gesture"
         case .flex:
             return "FLEX"
         }

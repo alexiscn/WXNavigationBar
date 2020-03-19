@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		697186BC7DFBF8EB3172D9FB /* Pods_WXNavigationBarDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 682E82EB4398F6A4052C3736 /* Pods_WXNavigationBarDemo.framework */; };
+		A31E1FF5242360D800983955 /* ChatRoomViewController_DisableInteractivePopGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31E1FF4242360D800983955 /* ChatRoomViewController_DisableInteractivePopGesture.swift */; };
 		A369A55D2402AB14009A1396 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369A55C2402AB14009A1396 /* AppDelegate.swift */; };
 		A369A5612402AB14009A1396 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369A5602402AB14009A1396 /* ViewController.swift */; };
 		A369A5642402AB14009A1396 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A369A5622402AB14009A1396 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		682E82EB4398F6A4052C3736 /* Pods_WXNavigationBarDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WXNavigationBarDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A31E1FF4242360D800983955 /* ChatRoomViewController_DisableInteractivePopGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController_DisableInteractivePopGesture.swift; sourceTree = "<group>"; };
 		A369A5592402AB14009A1396 /* NavigationBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A369A55C2402AB14009A1396 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A369A5602402AB14009A1396 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				A3F89C40240E6D1F00202710 /* ChatRoomViewController_ShadowImage.swift */,
 				A3F89C46241094D900202710 /* ChatRoomViewController_CustomBackButton.swift */,
 				A3F89C482410B79600202710 /* ChatRoomViewController_Translucent.swift */,
+				A31E1FF4242360D800983955 /* ChatRoomViewController_DisableInteractivePopGesture.swift */,
 			);
 			path = ChatRoom;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				A3F89C45240FBF1E00202710 /* MeItem.swift in Sources */,
 				A3F89C3F240E6CCB00202710 /* ChatRoomViewController_Transparent.swift in Sources */,
 				A369A59B24037BA5009A1396 /* PaymentViewController.swift in Sources */,
+				A31E1FF5242360D800983955 /* ChatRoomViewController_DisableInteractivePopGesture.swift in Sources */,
 				A369A59D24039993009A1396 /* MomentsViewController.swift in Sources */,
 				A369A5962403761C009A1396 /* SessionMoreItem.swift in Sources */,
 				A369A59F240399A8009A1396 /* Discover.swift in Sources */,

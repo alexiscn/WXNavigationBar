@@ -14,6 +14,18 @@ fileprivate class _WXNavigationGestureRecognizerDelegate: NSObject, UIGestureRec
     fileprivate init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
+    
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        guard let navigationController = navigationController else {
+            return true
+        }
+        if let topViewController = navigationController.viewControllers.last {
+            if topViewController.wx_disableInteractivePopGesture {
+                return false
+            }
+        }
+        return true
+    }
 }
 
 /// https://github.com/forkingdog/FDFullscreenPopGesture
@@ -39,7 +51,7 @@ fileprivate class _WXFullscreenPopGestureRecognizerDelegate: NSObject, UIGesture
         
         // Ignore when the active view controller doesn't allow interactive pop.
         if let topViewController = navigationController.viewControllers.last {
-            if !topViewController.wx_interactivePopEnabled {
+            if !topViewController.wx_fullScreenInteractivePopEnabled {
                 return false
             }
         }
@@ -148,7 +160,7 @@ extension UINavigationController {
             viewController.navigationItem.leftBarButtonItem = backButtonItem
         }
         
-        if viewController.wx_interactivePopEnabled {
+        if viewController.wx_fullScreenInteractivePopEnabled {
             enableFullscreenPopGesture()
         }
         

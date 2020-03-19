@@ -120,6 +120,9 @@ extension SessionViewController: UITableViewDelegate {
         case .translucent:
             let vc = ChatRoomViewController_Translucent(session: session)
             navigationController?.pushViewController(vc, animated: true)
+        case .disableInteractivePopGesture:
+            let vc = ChatRoomViewController_DisableInteractivePopGesture(session: session)
+            navigationController?.pushViewController(vc, animated: true)
         case .flex:
             FLEXManager.shared()?.showExplorer()
         }
