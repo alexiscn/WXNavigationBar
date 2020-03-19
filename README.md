@@ -109,9 +109,11 @@ So you use navigation bar as usual. when you want to handle the display things, 
 
 ## Getting Started
 
-There is no setup needed for using WXNavigationBar. However you can customize WXNavigationBar if needed. There are two ways to configure WXNavigationBar: via `UINavigationController.Nav` and via `UIViewController` properties.
+There is no setup needed for using `WXNavigationBar`. However you can customize `WXNavigationBar` if needed. There are two ways to configure WXNavigationBar: via `WXNavigationBar.NavBar` or via `UIViewController` properties.
 
 ### UINavigationController based configuration
+
+Using `WXNavigationBar.NavBar` to configure `WXNavigationBar` will effect all viewcontrollers.
 
 In your `AppDelegate.swift`
 
