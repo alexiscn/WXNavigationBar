@@ -57,7 +57,7 @@
 
 ## Requirements
 
-- iOS 11.0+
+- iOS 9.0+
 - Xcode 11.0+
 - Swift 5.0+
 
@@ -69,7 +69,7 @@
 
 ```bash
 use_frameworks!
-pod 'WXNavigationBar', '~> 1.9.3'
+pod 'WXNavigationBar', '~> 2.0.0'
 ```
 
 ### Carthage
@@ -84,7 +84,7 @@ github alexiscn/WXNavigationBar
 
 ```
 dependencies: [
-    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.9.3"))
+    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "2.0.0"))
 ]
 ```
 

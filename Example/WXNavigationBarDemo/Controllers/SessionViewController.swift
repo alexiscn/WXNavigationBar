@@ -123,6 +123,9 @@ extension SessionViewController: UITableViewDelegate {
         case .disableInteractivePopGesture:
             let vc = ChatRoomViewController_DisableInteractivePopGesture(session: session)
             navigationController?.pushViewController(vc, animated: true)
+        case .fullscreenInteractivePopGesture:
+            let vc = ChatRoomViewController_FullscreenPopGesture(session: session)
+            navigationController?.pushViewController(vc, animated: true)
         case .flex:
             FLEXManager.shared()?.showExplorer()
         }

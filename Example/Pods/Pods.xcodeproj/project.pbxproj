@@ -1365,6 +1365,42 @@
 			};
 			name = Release;
 		};
+		501DBD478648267D0A8D00C975258912 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F2FF24CAA8C481583E52E629E89EAD8 /* WXNavigationBar.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/WXNavigationBar/WXNavigationBar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/WXNavigationBar/WXNavigationBar-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/WXNavigationBar/WXNavigationBar.modulemap";
+				PRODUCT_MODULE_NAME = WXNavigationBar;
+				PRODUCT_NAME = WXNavigationBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		796B2FA79289AF57A727A8BC820422C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F56704AE1DFE84A67F43E02F7D6F8E04 /* Pods-WXNavigationBarDemo.release.xcconfig */;
@@ -1404,11 +1440,10 @@
 			};
 			name = Release;
 		};
-		8E749082AF2CB96E20EF5D7AB1B057DB /* Debug */ = {
+		9FB0F362A85C8E715556725EBF6AA3EA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6EDED71F8C3ACCAB9CD6DBCEF32996B7 /* WXNavigationBar.debug.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1421,7 +1456,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/WXNavigationBar/WXNavigationBar-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/WXNavigationBar/WXNavigationBar-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1573,43 +1608,6 @@
 			};
 			name = Release;
 		};
-		FF4A10D9803BA52567816122D0D090D4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F2FF24CAA8C481583E52E629E89EAD8 /* WXNavigationBar.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/WXNavigationBar/WXNavigationBar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/WXNavigationBar/WXNavigationBar-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/WXNavigationBar/WXNavigationBar.modulemap";
-				PRODUCT_MODULE_NAME = WXNavigationBar;
-				PRODUCT_NAME = WXNavigationBar;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1625,8 +1623,8 @@
 		113924816BA1BE65FCB2492B55FE3CE8 /* Build configuration list for PBXNativeTarget "WXNavigationBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8E749082AF2CB96E20EF5D7AB1B057DB /* Debug */,
-				FF4A10D9803BA52567816122D0D090D4 /* Release */,
+				9FB0F362A85C8E715556725EBF6AA3EA /* Debug */,
+				501DBD478648267D0A8D00C975258912 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

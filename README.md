@@ -61,7 +61,7 @@ WeChat NavigationBar
 
 ## Requirements
 
-- iOS 11.0+
+- iOS 9.0+
 - Xcode 11.0+
 - Swift 5.0+
 
@@ -74,7 +74,7 @@ WeChat NavigationBar
 ```bash
 use_frameworks!
 
-pod 'WXNavigationBar', '~> 1.9.3'
+pod 'WXNavigationBar', '~> 2.0.0'
 ```
 
 ### Carthage
@@ -93,7 +93,7 @@ Once you have your Swift package set up, adding WXNavigationBar as a dependency 
 
 ```
 dependencies: [
-    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.9.3"))
+    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "2.0.0"))
 ]
 ```
 
