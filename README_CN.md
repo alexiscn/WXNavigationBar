@@ -69,7 +69,7 @@
 
 ```bash
 use_frameworks!
-pod 'WXNavigationBar', '~> 1.9.1'
+pod 'WXNavigationBar', '~> 1.9.2'
 ```
 
 ### Carthage
@@ -84,7 +84,7 @@ github alexiscn/WXNavigationBar
 
 ```
 dependencies: [
-    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.9.1"))
+    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.9.2"))
 ]
 ```
 
@@ -252,7 +252,7 @@ override var wx_disableInteractivePopGesture: Bool {
 
 #### 启用全屏返回手势
 
-你可以在特定的ViewController启用全屏手势返回。默认是整个页面都会响应手势返回，通过`wx_interactivePopMaxAllowedInitialDistanceToLeftEdge`修改距离页面边缘的距离。
+你可以在特定的ViewController启用全屏手势返回。默认是整个页面都会响应手势返回，通过`wx_interactivePopMaxAllowedDistanceToLeftEdge`修改距离页面边缘的距离。
 
 ```swift
 override var wx_fullScreenInteractivePopEnabled: Bool {
@@ -263,7 +263,7 @@ override var wx_fullScreenInteractivePopEnabled: Bool {
 #### 全屏手势返回距离
 
 ```swift
-override wx_interactivePopMaxAllowedInitialDistanceToLeftEdge: CGFloat {
+override wx_interactivePopMaxAllowedDistanceToLeftEdge: CGFloat {
     return view.bounds.width * 0.5
 }
 ```

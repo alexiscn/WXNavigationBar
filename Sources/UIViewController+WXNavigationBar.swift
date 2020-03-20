@@ -26,10 +26,10 @@ extension UIViewController {
         
         static var disableInteractivePopGesture = "disableInteractivePopGesture"
         static var fullScreenInteractiveEnabled = "fullScreenInteractivePopEnabled"
-        static var interactivePopMaxAllowedInitialDistanceToLeftEdge = "interactivePopMaxAllowedInitialDistanceToLeftEdge"
+        static var interactivePopMaxAllowedDistanceToLeftEdge = "interactivePopMaxAllowedDistanceToLeftEdge"
         
         // For internal usage
-        static var willDisappear = "WXNavigationBar_willDisappear"
+        static var viewWillDisappear = "viewWillDisappear"
     }
     
     /// Fake NavigationBar.
@@ -172,27 +172,27 @@ extension UIViewController {
     
     /// The initial distance to left edge allow to interactive pop gesture.
     /// 0 by default, which means no limit.
-    @objc open var wx_interactivePopMaxAllowedInitialDistanceToLeftEdge: CGFloat {
-        get { return objc_getAssociatedObject(self, &AssociatedKeys.interactivePopMaxAllowedInitialDistanceToLeftEdge) as? CGFloat ?? 0.0 }
-        set { objc_setAssociatedObject(self, &AssociatedKeys.interactivePopMaxAllowedInitialDistanceToLeftEdge, newValue, .OBJC_ASSOCIATION_ASSIGN) }
+    @objc open var wx_interactivePopMaxAllowedDistanceToLeftEdge: CGFloat {
+        get { return objc_getAssociatedObject(self, &AssociatedKeys.interactivePopMaxAllowedDistanceToLeftEdge) as? CGFloat ?? 0.0 }
+        set { objc_setAssociatedObject(self, &AssociatedKeys.interactivePopMaxAllowedDistanceToLeftEdge, newValue, .OBJC_ASSOCIATION_ASSIGN) }
+    }
+}
+
+// MARK: - Private Work
+extension UIViewController {
+    
+    private var wx_viewWillDisappear: Bool {
+        get { return objc_getAssociatedObject(self, &AssociatedKeys.viewWillDisappear) as? Bool ?? false }
+        set { objc_setAssociatedObject(self, &AssociatedKeys.viewWillDisappear, newValue, .OBJC_ASSOCIATION_ASSIGN) }
     }
     
-    private var wx_willDisappear: Bool {
-        get { return objc_getAssociatedObject(self, &AssociatedKeys.willDisappear) as? Bool ?? false }
-        set { objc_setAssociatedObject(self, &AssociatedKeys.willDisappear, newValue, .OBJC_ASSOCIATION_ASSIGN) }
-    }
-    
-    static let wx_swizzle: Void = {
+    static let swizzleUIViewControllerOnce: Void = {
         let cls = UIViewController.self
         swizzleMethod(cls, #selector(UIViewController.viewDidLoad), #selector(UIViewController.wx_viewDidLoad))
         swizzleMethod(cls, #selector(UIViewController.viewWillAppear(_:)), #selector(UIViewController.wx_viewWillAppear(_:)))
         swizzleMethod(cls, #selector(UIViewController.viewDidAppear(_:)), #selector(UIViewController.wx_viewDidAppear(_:)))
         swizzleMethod(cls, #selector(UIViewController.viewWillDisappear(_:)), #selector(UIViewController.wx_viewWillDisappear(_:)))
     }()
-}
-
-// MARK: - Private Work
-extension UIViewController {
     
     @objc private func wx_viewDidLoad() {
         if navigationController != nil {
@@ -235,18 +235,18 @@ extension UIViewController {
             guard let self = self else { return }
             // Avoid navigationBar frame updated when swipe back from view controller
             // with large title mode to view controller with normal navigationBar
-            if self.wx_willDisappear {
+            if self.wx_viewWillDisappear {
                 return
             }
             let newFrame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height + frame.origin.y)
             self.wx_navigationBar.frame = newFrame
         }
-        wx_willDisappear = false
+        wx_viewWillDisappear = false
         wx_viewWillAppear(animated)
     }
     
     @objc private func wx_viewWillDisappear(_ animated: Bool) {
-        wx_willDisappear = true
+        wx_viewWillDisappear = true
         wx_viewWillDisappear(animated)
     }
     

@@ -15,7 +15,7 @@ extension UINavigationBar {
         static var frameDidUpdated = "frameDidUpdated"
     }
     
-    static let wx_swizzle: Void = {
+    static let swizzleNavigationBarOnce: Void = {
         let cls = UINavigationBar.self
         swizzleMethod(cls, #selector(UINavigationBar.layoutSubviews), #selector(UINavigationBar.wx_layoutSubviews))
     }()

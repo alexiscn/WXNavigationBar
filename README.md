@@ -35,7 +35,7 @@ WeChat NavigationBar
       * [Back Button Custom View](#back-button-custom-view)
       * [Disable Interactive Pop Gesture](#disable-interactive-pop-gesture)
       * [fullscreen interactive pop gesture](#fullscreen-interactive-pop-gesture)
-      * [interactivePopMaxAllowedInitialDistanceToLeftEdge](#interactivepopmaxallowedinitialdistancetoleftedge)
+      * [interactivePopMaxAllowedDistanceToLeftEdge](#interactivepopmaxalloweddistancetoleftedge)
 * [Advance usage](#advance-usage)
    * [Transparent Navigation Bar](#transparent-navigation-bar)
      * [alpha](#alpha)
@@ -74,7 +74,7 @@ WeChat NavigationBar
 ```bash
 use_frameworks!
 
-pod 'WXNavigationBar', '~> 1.9.1'
+pod 'WXNavigationBar', '~> 1.9.2'
 ```
 
 ### Carthage
@@ -93,7 +93,7 @@ Once you have your Swift package set up, adding WXNavigationBar as a dependency 
 
 ```
 dependencies: [
-    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.9.1"))
+    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "1.9.2"))
 ]
 ```
 
@@ -272,10 +272,10 @@ override var wx_fullScreenInteractivePopEnabled: Bool {
 }
 ```
 
-#### interactivePopMaxAllowedInitialDistanceToLeftEdge
+#### interactivePopMaxAllowedDistanceToLeftEdge
 
 ```swift
-override wx_interactivePopMaxAllowedInitialDistanceToLeftEdge: CGFloat {
+override wx_interactivePopMaxAllowedDistanceToLeftEdge: CGFloat {
     return view.bounds.width * 0.5
 }
 ```

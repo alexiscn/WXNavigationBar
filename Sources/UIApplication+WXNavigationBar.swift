@@ -10,9 +10,9 @@ import UIKit
 extension UIApplication {
     
     private static let runOnce: Void = {
-        UINavigationController.wx_navswizzle
-        UIViewController.wx_swizzle
-        UINavigationBar.wx_swizzle
+        UINavigationController.swizzleNavigationControllerOnce
+        UIViewController.swizzleUIViewControllerOnce
+        UINavigationBar.swizzleNavigationBarOnce
     }()
     
     override open var next: UIResponder? {
