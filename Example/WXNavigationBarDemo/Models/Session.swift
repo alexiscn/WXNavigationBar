@@ -19,6 +19,7 @@ enum Session: CaseIterable {
     case translucent
     case disableInteractivePopGesture
     case fullscreenInteractivePopGesture
+    case presentViewController
     case flex
     
     var title: String {
@@ -41,6 +42,8 @@ enum Session: CaseIterable {
             return "Disable Interactive Pop Gesture"
         case .fullscreenInteractivePopGesture:
             return "Fullscreen Interactive Pop Gesture"
+        case .presentViewController:
+            return "Present View Controller"
         case .flex:
             return "FLEX"
         }

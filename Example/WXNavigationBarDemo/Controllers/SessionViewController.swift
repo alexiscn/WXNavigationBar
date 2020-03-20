@@ -126,6 +126,12 @@ extension SessionViewController: UITableViewDelegate {
         case .fullscreenInteractivePopGesture:
             let vc = ChatRoomViewController_FullscreenPopGesture(session: session)
             navigationController?.pushViewController(vc, animated: true)
+        case .presentViewController:
+            let vc = PresentViewController()
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .overFullScreen
+            nav.modalPresentationCapturesStatusBarAppearance = true
+            present(nav, animated: true, completion: nil)
         case .flex:
             FLEXManager.shared()?.showExplorer()
         }

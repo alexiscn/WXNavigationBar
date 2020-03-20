@@ -10,6 +10,7 @@
 		697186BC7DFBF8EB3172D9FB /* Pods_WXNavigationBarDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 682E82EB4398F6A4052C3736 /* Pods_WXNavigationBarDemo.framework */; };
 		A31E1FF5242360D800983955 /* ChatRoomViewController_DisableInteractivePopGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31E1FF4242360D800983955 /* ChatRoomViewController_DisableInteractivePopGesture.swift */; };
 		A31E1FF92424BA1100983955 /* ChatRoomViewController_FullscreenPopGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31E1FF82424BA1100983955 /* ChatRoomViewController_FullscreenPopGesture.swift */; };
+		A31E1FFB2424F7AE00983955 /* PresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31E1FFA2424F7AE00983955 /* PresentViewController.swift */; };
 		A369A55D2402AB14009A1396 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369A55C2402AB14009A1396 /* AppDelegate.swift */; };
 		A369A5612402AB14009A1396 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369A5602402AB14009A1396 /* ViewController.swift */; };
 		A369A5642402AB14009A1396 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A369A5622402AB14009A1396 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		682E82EB4398F6A4052C3736 /* Pods_WXNavigationBarDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WXNavigationBarDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A31E1FF4242360D800983955 /* ChatRoomViewController_DisableInteractivePopGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController_DisableInteractivePopGesture.swift; sourceTree = "<group>"; };
 		A31E1FF82424BA1100983955 /* ChatRoomViewController_FullscreenPopGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController_FullscreenPopGesture.swift; sourceTree = "<group>"; };
+		A31E1FFA2424F7AE00983955 /* PresentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentViewController.swift; sourceTree = "<group>"; };
 		A369A5592402AB14009A1396 /* NavigationBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A369A55C2402AB14009A1396 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A369A5602402AB14009A1396 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				A369A57F2402B026009A1396 /* MeViewController.swift */,
 				A369A59A24037BA5009A1396 /* PaymentViewController.swift */,
 				A369A59C24039993009A1396 /* MomentsViewController.swift */,
+				A31E1FFA2424F7AE00983955 /* PresentViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				A369A57A2402B00B009A1396 /* SessionViewController.swift in Sources */,
 				A369A592240375AD009A1396 /* SessionMoreFrameFloatView.swift in Sources */,
 				A369A5842402BA05009A1396 /* ChatRoomViewController.swift in Sources */,
+				A31E1FFB2424F7AE00983955 /* PresentViewController.swift in Sources */,
 				A3F89C492410B79600202710 /* ChatRoomViewController_Translucent.swift in Sources */,
 				A369A5822402B035009A1396 /* RootViewController.swift in Sources */,
 				A3F89C3C240E6BF200202710 /* ChatRoomViewController_CustomBackButtonImage.swift in Sources */,
