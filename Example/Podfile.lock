@@ -1,6 +1,6 @@
 PODS:
   - FLEX (3.1.2)
-  - WXNavigationBar (1.9.0)
+  - WXNavigationBar (1.9.3)
 
 DEPENDENCIES:
   - FLEX
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FLEX: e13e805fc3eec8732cc227d1f7508770d46e9587
-  WXNavigationBar: 73021f51aaecf038ce3ef80a743a27739e21b60a
+  WXNavigationBar: 5d18faaaf41393eaa94e3110cf6159e0b99a9fcb
 
 PODFILE CHECKSUM: dcaea8c6bd82403e0f7b1a5d5a02bb05693944bd
 
