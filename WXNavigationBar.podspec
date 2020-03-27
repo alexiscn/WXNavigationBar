@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'WXNavigationBar'
-  s.version      = '2.0.0'
+  s.version      = '2.0.1'
   s.license = 'MIT'
   s.requires_arc = true
   s.source = { :git => 'https://github.com/alexiscn/WXNavigationBar.git', :tag => s.version.to_s }

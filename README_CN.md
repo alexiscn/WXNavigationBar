@@ -69,7 +69,7 @@
 
 ```bash
 use_frameworks!
-pod 'WXNavigationBar', '~> 2.0.0'
+pod 'WXNavigationBar', '~> 2.0.1'
 ```
 
 ### Carthage
@@ -84,7 +84,7 @@ github alexiscn/WXNavigationBar
 
 ```
 dependencies: [
-    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "2.0.0"))
+    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "2.0.1"))
 ]
 ```
 
@@ -99,6 +99,18 @@ dependencies: [
 
 
 ## 开始使用
+
+在`AppDelegate.swift`中配置:
+
+```swift
+import WXNavigationBar
+
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    // ...
+    WXNavigationBar.setup()    
+}
+
+```
 
 使用`WXNavigationBar`不需要特殊的初始化配置，默认的就如同微信中的导航栏一样。当你需要配置时，有两种方式可以配置。使用`WXNavigationBar.NavBar`中的属性对`UINavigationController`进行配置，该配置对所有的ViewController都生效，或者重写`UIViewController`中的相关属性对`UIViewController`进行配置。
 
