@@ -19,4 +19,16 @@ class ChatRoomViewController_CustomBackButton: ChatRoomViewController {
         return label
     }
     
+    override func wx_backButtonClicked() {
+        print("Back button Clicked")
+        
+        let alert = UIAlertController(title: "Are you sure to exit", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
+            self?.navigationController?.popViewController(animated: true)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+            
+        }))
+        present(alert, animated: true, completion: nil)
+    }
 }

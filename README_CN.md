@@ -40,6 +40,7 @@
       * [设置背景颜色](#设置背景颜色)
    * [动态更新导航栏样式](#动态更新导航栏样式)
    * [wx_navigationBar](#wx_navigationbar)
+   * [处理返回按钮事件](#处理返回按钮事件)
 * [注意点](#注意点)
    * [Child View Controller](#child_view_controller)
 * [License](#license)
@@ -69,7 +70,7 @@
 
 ```bash
 use_frameworks!
-pod 'WXNavigationBar', '~> 2.0.1'
+pod 'WXNavigationBar', '~> 2.1.0'
 ```
 
 ### Carthage
@@ -84,7 +85,7 @@ github alexiscn/WXNavigationBar
 
 ```
 dependencies: [
-    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "2.0.1"))
+    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "2.1.0"))
 ]
 ```
 
@@ -316,6 +317,23 @@ override var wx_navigationBarBackgroundColor: UIColor? {
 ### wx_navigationBar
 
 `wx_navigationBar`是`UIView`的子类，所以你可以对其做任何可以对`UIView`的逻辑。比如增加渐变的`GradientLayer`，比如增加导航栏动画等等。
+
+### 处理返回按钮事件
+
+如果你需要在用户点击返回按钮的时候处理一些逻辑，你可以重写ViewController的`wx_backButtonClicked`方法。比如，你可以在用户点击返回按钮的时候弹出一个Alert:
+
+```swift
+override func wx_backButtonClicked() {
+    let alert = UIAlertController(title: "Are you sure to exit", message: nil, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
+        self?.navigationController?.popViewController(animated: true)
+    }))
+    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+        
+    }))
+    present(alert, animated: true, completion: nil)
+}
+```
 
 ## 注意点
 

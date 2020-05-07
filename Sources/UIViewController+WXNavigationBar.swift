@@ -257,4 +257,11 @@ extension UIViewController {
         }
         wx_viewDidAppear(animated)
     }
+    
+    
+    /// Do additional logics when user tap back button.
+    /// Note: if your override this function. Do not call super.wx_backButtonClicked() and manage `popViewController` yourself.
+    @objc open func wx_backButtonClicked() {
+        navigationController?.popViewController(animated: true)
+    }
 }
