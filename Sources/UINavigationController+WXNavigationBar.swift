@@ -48,6 +48,7 @@ extension UINavigationController {
     static let swizzleNavigationControllerOnce: Void = {
         let cls = UINavigationController.self
         swizzleMethod(cls, #selector(UINavigationController.pushViewController(_:animated:)), #selector(UINavigationController.wx_pushViewController(_:animated:)))
+        swizzleMethod(cls, #selector(UINavigationController.setViewControllers(_:animated:)), #selector(UINavigationController.wx_setViewControllers(_:animated:)))
     }()
     
     func configureNavigationBar() {
@@ -82,6 +83,36 @@ extension UINavigationController {
         }
         
         wx_pushViewController(viewController, animated: animated)
+    }
+    
+    @objc private func wx_setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
+        
+        if viewControllers.count > 1 {
+            for (index, viewController) in viewControllers.enumerated() {
+                if index != 0 {
+                    viewController.hidesBottomBarWhenPushed = true
+                    
+                    let backButtonItem: UIBarButtonItem
+                    if let customView = viewController.wx_backButtonCustomView {
+                        backButtonItem = UIBarButtonItem(customView: customView)
+                        let tap = UITapGestureRecognizer(target: self, action: #selector(backButtonClicked))
+                        customView.isUserInteractionEnabled = true
+                        customView.addGestureRecognizer(tap)
+                    } else {
+                        let backImage = viewController.wx_backImage
+                        backButtonItem = UIBarButtonItem(image: backImage, style: .plain, target: self, action: #selector(backButtonClicked))
+                    }
+                    viewController.navigationItem.leftBarButtonItem = backButtonItem
+                }
+                
+                if viewController.wx_fullScreenInteractivePopEnabled {
+                    enableFullscreenPopGesture()
+                }
+            }
+        }
+        
+        wx_setViewControllers(viewControllers, animated: animated)
+        
     }
     
     private func enableFullscreenPopGesture() {

@@ -132,6 +132,12 @@ extension SessionViewController: UITableViewDelegate {
             nav.modalPresentationStyle = .overFullScreen
             nav.modalPresentationCapturesStatusBarAppearance = true
             present(nav, animated: true, completion: nil)
+        case .setViewControllers:
+            let vc = ChatRoomViewController_BackgroundImage(session: session)
+            if var controllers = navigationController?.viewControllers {
+                controllers.append(vc)
+                navigationController?.setViewControllers(controllers, animated: true)
+            }
         case .flex:
             FLEXManager.shared()?.showExplorer()
         }
