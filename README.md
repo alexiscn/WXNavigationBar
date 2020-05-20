@@ -75,7 +75,7 @@ WeChat NavigationBar
 ```bash
 use_frameworks!
 
-pod 'WXNavigationBar', '~> 2.2.0'
+pod 'WXNavigationBar', '~> 2.2.1'
 ```
 
 ### Carthage
@@ -94,7 +94,7 @@ Once you have your Swift package set up, adding WXNavigationBar as a dependency 
 
 ```
 dependencies: [
-    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "2.2.0"))
+    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "2.2.1"))
 ]
 ```
 

@@ -30,6 +30,7 @@
 		A369A59D24039993009A1396 /* MomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369A59C24039993009A1396 /* MomentsViewController.swift */; };
 		A369A59F240399A8009A1396 /* Discover.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369A59E240399A8009A1396 /* Discover.swift */; };
 		A369A5AB240696A5009A1396 /* MomentHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A369A5AA240696A5009A1396 /* MomentHeaderView.swift */; };
+		A3B3B52824753A020065DE5A /* MMNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B3B52724753A020065DE5A /* MMNavigationController.swift */; };
 		A3F89C38240E6ABD00202710 /* ChatRoomViewController_BackgroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F89C37240E6ABD00202710 /* ChatRoomViewController_BackgroundImage.swift */; };
 		A3F89C3A240E6B5A00202710 /* ChatRoomViewController_BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F89C39240E6B5A00202710 /* ChatRoomViewController_BackgroundColor.swift */; };
 		A3F89C3C240E6BF200202710 /* ChatRoomViewController_CustomBackButtonImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F89C3B240E6BF200202710 /* ChatRoomViewController_CustomBackButtonImage.swift */; };
@@ -66,6 +67,7 @@
 		A369A59C24039993009A1396 /* MomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsViewController.swift; sourceTree = "<group>"; };
 		A369A59E240399A8009A1396 /* Discover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discover.swift; sourceTree = "<group>"; };
 		A369A5AA240696A5009A1396 /* MomentHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentHeaderView.swift; sourceTree = "<group>"; };
+		A3B3B52724753A020065DE5A /* MMNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMNavigationController.swift; sourceTree = "<group>"; };
 		A3F89C37240E6ABD00202710 /* ChatRoomViewController_BackgroundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController_BackgroundImage.swift; sourceTree = "<group>"; };
 		A3F89C39240E6B5A00202710 /* ChatRoomViewController_BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController_BackgroundColor.swift; sourceTree = "<group>"; };
 		A3F89C3B240E6BF200202710 /* ChatRoomViewController_CustomBackButtonImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController_CustomBackButtonImage.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				A369A59824037833009A1396 /* Constants.swift */,
+				A3B3B52724753A020065DE5A /* MMNavigationController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				A3F89C492410B79600202710 /* ChatRoomViewController_Translucent.swift in Sources */,
 				A369A5822402B035009A1396 /* RootViewController.swift in Sources */,
 				A3F89C3C240E6BF200202710 /* ChatRoomViewController_CustomBackButtonImage.swift in Sources */,
+				A3B3B52824753A020065DE5A /* MMNavigationController.swift in Sources */,
 				A369A5AB240696A5009A1396 /* MomentHeaderView.swift in Sources */,
 				A3F89C45240FBF1E00202710 /* MeItem.swift in Sources */,
 				A3F89C3F240E6CCB00202710 /* ChatRoomViewController_Transparent.swift in Sources */,

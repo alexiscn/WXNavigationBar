@@ -13,6 +13,7 @@ extension UINavigationController {
         static var gestureDelegate = "gestureDelegate"
         static var fullscreenPopGestureDelegate = "fullscreenPopGestureDelegate"
         static var fullscreenPopGestureRecognizer = "fullscreenPopGestureRecognizer"
+        static var enableWXNavigationBar = "enableWXNavigationBar"
     }
     
     private var wx_gestureDelegate: WXNavigationGestureRecognizerDelegate? {
@@ -43,6 +44,18 @@ extension UINavigationController {
                                  fullscreenPopGR,
                                  .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return fullscreenPopGR
+    }
+    
+    /// Enable WXNavigationBar on UINavigationController, `true` by default.
+    /// You can use this property to specify special navigationController to not use WXNavigationBar.
+    /// eg:
+    /// let rootViewController = RootViewController()
+    /// let rootNav = FLNavigationController(rootViewController: rootViewController)
+    /// rootNav.wx_enableWXNavigationBar = false
+    /// present(rootNav, animated: true)
+    @objc open var wx_enableWXNavigationBar: Bool {
+        get { return (objc_getAssociatedObject(self, &AssociatedKeys.enableWXNavigationBar) as? Bool) ?? true }
+        set { objc_setAssociatedObject(self, &AssociatedKeys.enableWXNavigationBar, newValue, .OBJC_ASSOCIATION_ASSIGN) }
     }
     
     static let swizzleNavigationControllerOnce: Void = {

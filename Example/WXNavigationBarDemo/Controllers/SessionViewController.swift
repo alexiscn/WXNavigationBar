@@ -128,7 +128,7 @@ extension SessionViewController: UITableViewDelegate {
             navigationController?.pushViewController(vc, animated: true)
         case .presentViewController:
             let vc = PresentViewController()
-            let nav = UINavigationController(rootViewController: vc)
+            let nav = MMNavigationController(rootViewController: vc)
             nav.modalPresentationStyle = .overFullScreen
             nav.modalPresentationCapturesStatusBarAppearance = true
             present(nav, animated: true, completion: nil)
