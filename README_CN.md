@@ -70,7 +70,7 @@
 
 ```bash
 use_frameworks!
-pod 'WXNavigationBar', '~> 2.3.0'
+pod 'WXNavigationBar', '~> 2.3.1'
 ```
 
 ### Carthage
@@ -85,7 +85,7 @@ github alexiscn/WXNavigationBar
 
 ```
 dependencies: [
-    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "2.3.0"))
+    .package(url: "https://github.com/alexiscn/WXNavigationBar.git", .upToNextMajor(from: "2.3.1"))
 ]
 ```
 
