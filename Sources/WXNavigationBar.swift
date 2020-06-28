@@ -111,8 +111,9 @@ public class WXNavigationBar: UIView {
         }
     }
     
-    public override func addSubview(_ view: UIView) {
-        containerView.addSubview(view)
+    /// Add subview to containerView
+    public func add(_ subView: UIView) {
+        containerView.addSubview(subView)
     }
     
     public static func setup() {
