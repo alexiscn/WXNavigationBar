@@ -138,6 +138,9 @@ extension SessionViewController: UITableViewDelegate {
                 controllers.append(vc)
                 navigationController?.setViewControllers(controllers, animated: true)
             }
+        case .preferStatusBarHidden:
+            let vc = ChatRoomViewController_StatusBarHidden(session: session)
+            navigationController?.pushViewController(vc, animated: true)
         case .flex:
             FLEXManager.shared()?.showExplorer()
         }
