@@ -210,10 +210,10 @@ extension UIViewController {
                                             height: Utility.navigationBarHeight)
             wx_navigationBar.enableBlurEffect(wx_useSystemBlurNavBar)
             
-            // Fix when ViewController is UITableViewController.
-            // wx_navigationBar will layout strange when the root view is UITableView.
+            // Fix when the view of ViewController is UIScrollView.
+            // wx_navigationBar will layout strange when the root view is UIScrollView.
             // So we add wx_navigationBar to navigationController
-            if view is UITableView {
+            if view is UIScrollView {
                 navigationController?.view.insertSubview(wx_navigationBar, at: 1)
             } else {
                 view.addSubview(wx_navigationBar)
