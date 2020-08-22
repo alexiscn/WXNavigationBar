@@ -1,6 +1,6 @@
 PODS:
-  - FLEX (3.1.2)
-  - WXNavigationBar (2.2.2)
+  - FLEX (4.1.1)
+  - WXNavigationBar (2.3.2)
 
 DEPENDENCIES:
   - FLEX
@@ -15,8 +15,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FLEX: e13e805fc3eec8732cc227d1f7508770d46e9587
-  WXNavigationBar: a779a5d7042c4e10f8ac674469b8b80d97e385d2
+  FLEX: 81096107977a09836eb440173010ceeef01105d6
+  WXNavigationBar: 925d279cf0e95028b3ac62f6abc747310c64a9aa
 
 PODFILE CHECKSUM: dcaea8c6bd82403e0f7b1a5d5a02bb05693944bd
 

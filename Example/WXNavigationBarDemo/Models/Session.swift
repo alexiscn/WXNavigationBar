@@ -21,6 +21,7 @@ enum Session: CaseIterable {
     case fullscreenInteractivePopGesture
     case presentViewController
     case setViewControllers
+    case preferStatusBarHidden
     case flex
     
     var title: String {
@@ -47,6 +48,8 @@ enum Session: CaseIterable {
             return "Present View Controller"
         case .setViewControllers:
             return "NavigationController setViewControllers"
+        case .preferStatusBarHidden:
+            return "Preferred StatusBar Hidden"
         case .flex:
             return "FLEX"
         }
