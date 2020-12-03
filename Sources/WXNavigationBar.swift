@@ -34,6 +34,9 @@ public class WXNavigationBar: UIView {
         
         /// A Boolean value indicating whether fullscreen pop gesture is enabled.
         public static var fullscreenPopGestureEnabled = false
+        
+        /// In this black list, fake NavigationBar does not exist.
+        public static var blacklist: [UIViewController] = []
     }
     
     /// Bottom line
