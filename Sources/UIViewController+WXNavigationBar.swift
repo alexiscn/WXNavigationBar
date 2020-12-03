@@ -238,6 +238,10 @@ extension UIViewController {
             if let parent = parent, !(parent is UINavigationController)  && wx_automaticallyHideWXNavBarInChildViewController {
                 wx_navigationBar.isHidden = true
             }
+            print(String(describing: self.classForCoder))
+            if WXNavigationBar.NavBar.blacklist.filter({ String(describing: self.classForCoder) == $0 }).first != nil {
+                wx_navigationBar.isHidden = true
+            }
         }
         
         wx_viewDidLoad()

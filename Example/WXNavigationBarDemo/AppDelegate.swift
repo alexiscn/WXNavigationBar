@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         WXNavigationBar.setup()
         
         WXNavigationBar.NavBar.backgroundColor = .secondarySystemBackground
+        WXNavigationBar.NavBar.blacklist = ["PresentViewController"]
         
         let rootViewController = RootViewController()
         window = UIWindow(frame: UIScreen.main.bounds)
