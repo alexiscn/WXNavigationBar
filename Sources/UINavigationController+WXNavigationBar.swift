@@ -62,6 +62,7 @@ extension UINavigationController {
         let cls = UINavigationController.self
         swizzleMethod(cls, #selector(UINavigationController.pushViewController(_:animated:)), #selector(UINavigationController.wx_pushViewController(_:animated:)))
         swizzleMethod(cls, #selector(UINavigationController.setViewControllers(_:animated:)), #selector(UINavigationController.wx_setViewControllers(_:animated:)))
+        swizzleMethod(cls, #selector(UINavigationController.viewDidLoad), #selector(UINavigationController.wx_navigationViewDidLoad))
     }()
     
     func configureNavigationBar() {
@@ -126,6 +127,14 @@ extension UINavigationController {
         
         wx_setViewControllers(viewControllers, animated: animated)
         
+    }
+    
+    @objc private func wx_navigationViewDidLoad() {
+        let type = "\(self.classForCoder)"
+        let set = WXNavigationBarManger.shared.blackUINavigationControllers
+        let enableWXNavigationBar: Bool = set.contains(type) ? false : true
+        wx_enableWXNavigationBar = enableWXNavigationBar
+        wx_navigationViewDidLoad()
     }
     
     private func enableFullscreenPopGesture() {
