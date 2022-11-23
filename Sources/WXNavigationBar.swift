@@ -7,6 +7,18 @@
 
 import UIKit
 
+public class WXNavigationBarManger {
+    public static let shared = WXNavigationBarManger()
+    /// 黑名单
+    var blackUINavigationControllers: Set<String> = []
+    
+    /// 启动 WXNavigationBar黑名单，黑名单内的UINavigationController将关闭WXNavigationBar
+    /// - Parameter blackUINavigationControllers: 黑名单（类名字符串集合）
+    public func setup(_ blackUINavigationControllers: Set<String> = []) {
+        self.blackUINavigationControllers = blackUINavigationControllers
+    }
+}
+
 public class WXNavigationBar: UIView {
     
     /// Global settings of NavigationBar
@@ -116,7 +128,8 @@ public class WXNavigationBar: UIView {
         containerView.addSubview(subView)
     }
     
-    public static func setup() {
+    public static func setup(_ blackUINavigationControllers: Set<String> = []) {
+        WXNavigationBarManger.shared.setup(blackUINavigationControllers)
         UIApplication.runOnce
     }
 }
